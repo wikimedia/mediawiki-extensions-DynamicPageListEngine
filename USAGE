@@ -24,9 +24,12 @@ Select by category. Recognizes the parameters <code>category</code> and <code>no
 
 === Redirects ===
 
-Include or exclude redirects. Recognizes the parameter <code>redirects</code>, which may be one of <code>exclude|include|only</code>. Default is <code>exclude</code>, for compatibility with [[Extension:DynamicPageList (Wikimedia)|DynamicPageList (Wikimedia)]].
+Include or exclude redirects. Recognizes the parameter <code>redirects</code>,
+which may be one of <code>exclude|include|only|resolve</code>.
 
-This implies that enabling this feature in <code>[[{{NAMESPACE}}:{{BASEPAGENAME}}#Configuration|$wgDynamicPageListEngineFeatures]]</code> will change the result set of a dynamic page list even for parameter sets which do not contain the <code>redirects</code> parameter, if the result set would contain redirects.
+Default is <code>exclude</code>, for compatibility with [[Extension:DynamicPageList (Wikimedia)|DynamicPageList (Wikimedia)]].This implies that enabling this feature in <code>[[{{NAMESPACE}}:{{BASEPAGENAME}}#Configuration|$wgDynamicPageListEngineFeatures]]</code> will change the result set of a dynamic page list even for parameter sets which do not contain the <code>redirects</code> parameter, if the result set would contain redirects.
+
+The value <code>resolve</code> selects only redirects just like <code>only</code>, but in addition the target for each redirect is retrieved. This means that the result objuect for each page has a property <code>target</code> which is an associative array of properties of the redirect target.
 
 === Titlematch ===
 
@@ -112,5 +115,5 @@ Check whether the whole specification is acceptable in terms of database load.
 
 === Results ===
 
-Convert query results to other representations. See [[{{NAMESPACE}}:{{BASEPAGENAME}}#Lua library|Lua library]] fro details.
+Convert query results to other representations. See [[{{NAMESPACE}}:{{BASEPAGENAME}}#Lua library|Lua library]] for details.
 

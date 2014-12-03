@@ -99,7 +99,7 @@ extends Scribunto_LuaLibraryBase {
 			throw new Scribunto_LuaError( wfMessage(
 					'dple-error-too-many-expensive-functions' )->text() );
 		}
-		
+
 		/** Add the page to the [tracking category]
 		 * (http://www.mediawiki.org/wiki/Help:Tracking_categories)
 		 * `dple-tracking-category`. */

@@ -37,6 +37,7 @@ implements DpleFeatureInterface {
 	/* == private variables == */
 
 	private $redirects_; ///< include|only|exclude.
+	private $resolve_; ///< Whether to resolve redirects.
 
 	/* == magic methods == */
 
@@ -44,6 +45,12 @@ implements DpleFeatureInterface {
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
+		if ( isset( $params['redirects'] )
+			&& $params['redirects'] == 'resolve' ) { 
+			$this->resolve_ = true;
+			$params['redirects'] = 'only';
+		}
+		
 		$this->redirects_ = $this->parseIncludeExclude(
 			isset( $params['redirects'] ) ? $params['redirects'] : null );
 	}
@@ -53,6 +60,11 @@ implements DpleFeatureInterface {
 	/// Get @ref $redirects_.
 	public function getRedirects() {
 		return $this->redirects_;
+	}
+
+	/// Get @ref $resolve_.
+	public function ifResolve() {
+		return $this->resolve_;
 	}
 
 	/* == operations == */

@@ -131,6 +131,10 @@ implements DpleFeatureInterface {
 
 		$extraxFeature = $this->getFeature( 'DpleFeatureExtrax' );
 
+		$resolveRedirects = $this->getFeature( 'DpleFeatureRedirects' );
+		$resolveRedirects =
+			$resolveRedirects ? $resolveRedirects->ifResolve() : false;
+
 		foreach ( $result as $row ) {
 			$title = Title::makeTitle( $row->page_namespace,
 				$row->page_title );
@@ -140,6 +144,9 @@ implements DpleFeatureInterface {
 			}
 
 			/** Store additional information in property `dpleCustom`:
+			 * - `withoutsuffix` => page name without
+			 * suffix (useful for filenames, but always
+			 * defined in order to simplify usage)
 			 * - `length` => Uncompressed length in bytes of the page's
 			 * current source text.
 			 * - `categoryadd` => Timestamp of addition to the first
@@ -147,20 +154,25 @@ implements DpleFeatureInterface {
 			 * - `counter` Page view counter, unless counters are disabled.
 			 * - `sortkey`=> Sort key in first category, if any.
 			 * - `extra` => Extra information given with sort key, if any.
+			 * - `target`=> Array of properties of the target page, if
+			 *	 the `redirect` parameter is set to `resolve`.
 			 */
-			$title->dpleCustom = array( 'length' => $row->page_len );
+			$title->dpleCustom = array(
+				'withoutsuffix' => preg_replace( '/\..*$/', '', $title->getText() ),
+				'length' => $row->page_len
+				);
 
 			if ( !$wgDisableCounters ) {
 				$title->dpleCustom['counter'] = $row->page_counter;
 			}
 
-			if( isset( $row->cl_timestamp ) ) {
+			if ( isset( $row->cl_timestamp ) ) {
 				$title->dpleCustom['categoryadd'] = $row->cl_timestamp;
 
-				if( $extraFeature ) {
+				if ( $extraFeature ) {
 					$sortkey = $row->sortkey;
 
-					if( isset( $sortkey ) && $sortkey != '' ) {
+					if ( isset( $sortkey ) && $sortkey != '' ) {
 						$title->dpleCustom['sortkey'] = $sortkey;
 
 						if ( strpos( $sortkey, '|' ) !== FALSE ) {
@@ -171,13 +183,13 @@ implements DpleFeatureInterface {
 				}
 			}
 
-			if( isset( $row->clx_timestamp ) ) {
+			if ( isset( $row->clx_timestamp ) ) {
 				$title->dpleCustom['categoryaddx'] = $row->clx_timestamp;
 
-				if( $extraxFeature ) {
+				if ( $extraxFeature ) {
 					$sortkeyx = $row->sortkeyx;
 
-					if( isset( $sortkeyx ) && $sortkeyx != '' ) {
+					if ( isset( $sortkeyx ) && $sortkeyx != '' ) {
 						$title->dpleCustom['sortkeyx'] = $sortkeyx;
 
 						if ( strpos( $sortkeyx, '|' ) !== FALSE ) {
@@ -186,6 +198,11 @@ implements DpleFeatureInterface {
 						}
 					}
 				}
+			}
+
+			if ( $resolveRedirects ) {
+				$title->dpleCustom['target'] =
+					DpleUtils::resolveRedirect( $title );
 			}
 
 			$this->titles_[] = $title;
@@ -214,34 +231,7 @@ implements DpleFeatureInterface {
 		$this->arrays_ = array();
 
 		foreach ( $this->toTitles( $result ) as $title ) {
-			/** Extract all those Title properties which are cheap
-			 * (i.e. do not require database access):
-			 * - namespace
-			 * - nsText
-			 * - text
-			 * - prefixedText
-			 * - baseText
-			 * - subpageText
-			 * - canTalk
-			 * - isContentPage
-			 * - isSubpage
-			 * - isTalkPage
-			 * - isRedirect
-			 */
-			$array = array(
-				'id' => $title->getArticleId(),
-				'namespace' => $title->getNamespace(),
-				'nsText' => $title->getNsText(),
-				'text' => $title->getText(),
-				'prefixedText' => $title->getPrefixedText(),
-				'baseText' => $title->getBaseText(),
-				'subpageText' => $title->getSubpageText(),
-				'canTalk' => $title->canTalk(),
-				'isContentPage' => $title->isContentPage(),
-				'isRedirect' => $title->isRedirect(),
-				'isSubpage' => $title->isSubpage(),
-				'isTalkPage' => $title->isTalkPage()
-			);
+			$array = DpleUtils::title2array( $title );
 
 			/** Add the contents of `dpleCustom` (see  toTitles()). */
 			$array += $title->dpleCustom;

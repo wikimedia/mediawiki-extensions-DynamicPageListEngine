@@ -26,7 +26,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
  * @ref $wgDpleFeatures, @ref $wgDpleCondCostMap, @ref
  * $wgDpleOrderCostMap and the @ref Dple.i18n.php "messages".
  *
- * @version 1.0.0
+ * @version 1.1.0
  *
  * @copyright [GPL-3.0+](https://gnu.org/licenses/gpl-3.0-standalone.html)
  *
@@ -213,7 +213,7 @@ $wgExtensionCredits['other'][] =
 		'path' => __FILE__,
 		'name' => 'DynamicPageListEngine',
 		'descriptionmsg' => 'dynamicpagelistengine-desc',
-		'version' => '1.0.0',
+		'version' => '1.1.0',
 		'author' => '[http://www.mediawiki.org/wiki/User:RV1971 RV1971]',
 		'url' => 'http://www.mediawiki.org/wiki/Extension:DynamicPageListEngine'
 	);
@@ -250,6 +250,7 @@ foreach ( array(
 		'DpleFeatureUses',
 		'DpleFeatureUsedby',
 		'DpleQuery',
+		'DpleUtils',
 		'Scribunto_LuaDynamicPageListEngineLibrary'
 	) as $class ) {
 	/** @endcond */
@@ -286,4 +287,3 @@ $wgMessagesDirs['DynamicPageListEngine'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['DynamicPageListEngine'] =
 	__DIR__ . '/DynamicPageListEngine.i18n.php';
 ?>
-
