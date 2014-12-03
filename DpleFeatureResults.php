@@ -158,7 +158,7 @@ implements DpleFeatureInterface {
 			 *	 the `redirect` parameter is set to `resolve`.
 			 */
 			$title->dpleCustom = array(
-				'withoutsuffix' => preg_replace( '/\..*$/', '', $title->getText() ),
+				'withoutsuffix' => preg_replace( '/\.[^\.]*$/', '', $title->getText() ),
 				'length' => $row->page_len
 				);
 
