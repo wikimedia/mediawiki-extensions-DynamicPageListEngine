@@ -35,7 +35,7 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 	private $tableAlias_; ///< Table alias to use in the query.
 
 	/// Column to use for exclusion condition in outer join.
-	private $tableColumn_; 
+	private $tableColumn_;
 
 	private $joinConds_;///< Array of join conditions.
 

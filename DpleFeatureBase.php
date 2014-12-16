@@ -111,7 +111,9 @@ class DpleFeatureBase {
 		$titles = array();
 
 		foreach ( (array)$pages as $page ) {
-			$title = Title::makeTitleSafe( $ns, $page );
+			/** When processing title strings, decode html entities (such as
+			 *  &amp;. */
+			$title = Title::makeTitleSafe( $ns, html_entity_decode( $page ) );
 
 			/** Silently ignore pages that do not exist. */
 			if( isset( $title ) ) {

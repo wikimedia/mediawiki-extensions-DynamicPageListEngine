@@ -10,3 +10,8 @@ These are the release notes for version 1.1. See [[{{NAMESPACE}}:{{BASEPAGENAME}
 
 * Added the '''withoutsuffix''' item to the result records of [[{{NAMESPACE}}:{{BASEPAGENAME}}#mw.ext.dpl.getPages]].
 * Added the '''resolve''' option to the [[{{NAMESPACE}}:{{BASEPAGENAME}}#Redirects]] module.
+
+=== Bugfixes ===
+
+* Page titles containing <code>&</code> characters are now handled correctly.
+

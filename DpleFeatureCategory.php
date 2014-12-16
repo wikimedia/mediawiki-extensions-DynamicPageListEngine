@@ -27,7 +27,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
-class DpleFeatureCategory extends DpleFeatureLinksBase 
+class DpleFeatureCategory extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
 	/* == magic methods == */
 
