@@ -46,11 +46,11 @@ implements DpleFeatureInterface {
 		parent::__construct( $features );
 
 		if ( isset( $params['redirects'] )
-			&& $params['redirects'] == 'resolve' ) { 
+			&& $params['redirects'] == 'resolve' ) {
 			$this->resolve_ = true;
 			$params['redirects'] = 'only';
 		}
-		
+
 		$this->redirects_ = $this->parseIncludeExclude(
 			isset( $params['redirects'] ) ? $params['redirects'] : null );
 	}

@@ -55,6 +55,10 @@ Select pages linking to the specified pages. Recognizes the parameters <code>lin
 
 Select paged linked from specified pages. Recognizes the parameters <code>linksfrom</code> and <code>notlinksfrom</code>. Each of them may be a string or an array. The names are chosen for compatibility with [[Extension:DynamicPageList (third-party)|DynamicPageList (third-party)]].
 
+=== Redirectsto ===
+
+Select pages redirecting to the specified pages. Recognizes the parameters <code>redirectsto</code> and <code>notredirectsto</code>. Each of them may be a string or an array.
+
 === Uses ===
 
 Select pages using the specified pages as templates. Recognizes the parameters <code>uses</code> and <code>notuses</code>. Each of them may be a string or an array. The results are the same as with [[Extension:DynamicPageList (third-party)|DynamicPageList (third-party)]].
