@@ -29,13 +29,13 @@ class DynamicPageListEngine implements Countable {
 	/* == private data members == */
 
 	/// Array of parameters given to the constructor.
-	private $params_ = array();
+	private $params_ = [];
 
 	/// Array of objects derived from DpleFeature.
-	private $features_ = array();
+	private $features_ = [];
 
 	/// Mapping of result converter functions to the feature classes they are defined in.
-	private $converters_ = array();
+	private $converters_ = [];
 
 	private $query_; ///< DpleQuery object.
 
@@ -58,14 +58,16 @@ class DynamicPageListEngine implements Countable {
 		 *	are relevant for a particular request. This simplifies
 		 *	feature development since the features do not need to
 		 *	provide information of what they are relevant for. */
-		foreach ( $wgDpleFeatures as $class ) {
-			$this->features_[$class] = new $class( $this->params_,
-				$this->features_ );
+		foreach ( $wgDpleFeatures as $class => $enabled ) {
+			if ( $enabled ) {
+				$this->features_[$class] = new $class(
+					$this->params_, $this->features_ );
 
-			/** Register all result converters. */
-			foreach ( $this->features_[$class]->getResultConverters()
-				as $method ) {
-				$this->converters_[$method] = $class;
+				/** Register all result converters. */
+				foreach ( $this->features_[$class]->getResultConverters()
+						  as $method ) {
+					$this->converters_[$method] = $class;
+				}
 			}
 		}
 
@@ -145,4 +147,3 @@ class DynamicPageListEngine implements Countable {
 			$this->query_->getResult() );
 	}
 }
-?>
