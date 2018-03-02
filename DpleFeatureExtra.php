@@ -54,12 +54,12 @@ implements DpleFeatureInterface {
 		parent::__construct( $features );
 
 		if ( isset( $params['extra'] ) ) {
-			$this->extras_ = array_map( array( $this, 'parseText' ),
+			$this->extras_ = array_map( [ $this, 'parseText' ],
 				(array)$params['extra'] );
 		}
 
 		if ( isset( $params['notextra'] ) ) {
-			$this->notExtras_ = array_map( array( $this, 'parseText' ),
+			$this->notExtras_ = array_map( [ $this, 'parseText' ],
 				(array)$params['notextra'] );
 		}
 	}
@@ -105,10 +105,10 @@ implements DpleFeatureInterface {
 
 		/** Otherwise, also fetch the sort key for the first
 		 *	category. */
-		$query->addVars( array( 'sortkey' => 'cl1.cl_sortkey_prefix' ) );
+		$query->addVars( [ 'sortkey' => 'cl1.cl_sortkey_prefix' ] );
 
 		if ( $this->extras_ ) {
-			$extraConds = array();
+			$extraConds = [];
 
 			/** Add conditions based on @ref $extras_. */
 			foreach ( $this->extras_ as $extra ) {
@@ -126,4 +126,3 @@ implements DpleFeatureInterface {
 		}
 	}
 }
-?>

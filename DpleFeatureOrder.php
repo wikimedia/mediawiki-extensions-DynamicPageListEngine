@@ -34,7 +34,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
-class DpleFeatureOrder extends DpleFeatureBase 
+class DpleFeatureOrder extends DpleFeatureBase
 implements DpleFeatureInterface {
 	/* == private variables == */
 
@@ -232,4 +232,3 @@ implements DpleFeatureInterface {
 		$query->setOption( 'ORDER BY', "$sqlSort $this->sqlOrder_" );
 	}
 }
-?>

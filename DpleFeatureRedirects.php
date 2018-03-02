@@ -73,13 +73,12 @@ implements DpleFeatureInterface {
 	public function modifyQuery( DpleQuery &$query ) {
 		switch ( $this->redirects_ ) {
 			case 'only':
-				$query->addConds( array( 'page_is_redirect' => 1 ) );
+				$query->addConds( [ 'page_is_redirect' => 1 ] );
 				break;
 
 			case 'exclude':
-				$query->addConds( array( 'page_is_redirect' => 0 ) );
+				$query->addConds( [ 'page_is_redirect' => 0 ] );
 				break;
 		}
 	}
 }
-?>

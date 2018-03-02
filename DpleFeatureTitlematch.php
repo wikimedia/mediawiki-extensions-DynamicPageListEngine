@@ -66,19 +66,20 @@ implements DpleFeatureInterface {
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
-		foreach ( array(
+		foreach (
+			[
 				'titleprefix' => 'titleprefixes_',
 				'nottitleprefix' => 'notTitleprefixes_',
 				'titlesuffix' => 'titlesuffixes_',
 				'nottitlesuffix' => 'notTitlesuffixes_',
 				'titlecontains' => 'titlecontains_',
 				'nottitlecontains' => 'notTitlecontains_'
-			) as $key => $member ) {
+				] as $key => $member ) {
 
 			if ( isset( $params[$key] ) ) {
 				$this->$member =
-					array_map( array( $this, 'parseTitleSubstring' ),
-						(array)$params[$key] );
+					array_map( [ $this, 'parseTitleSubstring' ],
+							   (array)$params[$key] );
 			}
 		}
 	}
@@ -141,7 +142,7 @@ implements DpleFeatureInterface {
 		$dbr = $query->getDbr();
 
 		if ( $this->titleprefixes_ ) {
-			$prefixConds = array();
+			$prefixConds = [];
 
 			foreach ( $this->titleprefixes_ as $prefix ) {
 				$prefixConds[] = 'page_title'
@@ -157,7 +158,7 @@ implements DpleFeatureInterface {
 		}
 
 		if ( $this->titlesuffixes_ ) {
-			$suffixConds = array();
+			$suffixConds = [];
 
 			foreach ( $this->titlesuffixes_ as $suffix ) {
 				$suffixConds[] = 'page_title'
@@ -173,7 +174,7 @@ implements DpleFeatureInterface {
 		}
 
 		if ( $this->titlecontains_ ) {
-			$containsConds = array();
+			$containsConds = [];
 
 			foreach ( $this->titlecontains_ as $contains ) {
 				$containsConds[] = 'page_title'
@@ -191,4 +192,3 @@ implements DpleFeatureInterface {
 		}
 	}
 }
-?>

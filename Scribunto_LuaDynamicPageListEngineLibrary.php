@@ -66,15 +66,15 @@ extends Scribunto_LuaLibraryBase {
 
 	/// Register this library.
 	public function register() {
-		$lib = array(
+		$lib = [
 			'getFullpagenames' => array( $this, 'getFullpagenames' ),
 			'getPagenames' => array( $this, 'getPagenames' ),
 			'getPages' => array( $this, 'getPages' )
-		);
+		];
 
 		$this->getEngine()->registerInterface(
 			__DIR__ . '/DynamicPageListEngine.lua',
-			$lib, array() );
+			$lib, [] );
 	}
 
 	/* == Functions to be called from Lua == */
@@ -111,9 +111,9 @@ extends Scribunto_LuaLibraryBase {
 
 		/* Renumber the records starting with 1, to match the Lua
 		 * convention. */
-		return array( $pages
-			? array_combine( range( 1, count( $pages ) ), $pages )
-			: null );
+		return [ $pages
+				 ? array_combine( range( 1, count( $pages ) ), $pages )
+				 : null ];
 	}
 
 	/**
@@ -138,4 +138,3 @@ extends Scribunto_LuaLibraryBase {
 		return $this->getPages( $params, 'toPagenames' );
 	}
 }
-?>

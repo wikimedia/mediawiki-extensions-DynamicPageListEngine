@@ -55,14 +55,14 @@ implements DpleFeatureInterface {
 
 		if ( isset( $params['namespace'] ) ) {
 			$this->namespaces_ =
-				array_map( array( $this, 'parseNamespace' ),
-					(array)$params['namespace'] );
+				array_map( [ $this, 'parseNamespace' ],
+						   (array)$params['namespace'] );
 		}
 
 		if ( isset( $params['notnamespace'] ) ) {
 			$this->notNamespaces_ =
-				array_map( array( $this, 'parseNamespace' ),
-					(array)$params['notnamespace'] );
+				array_map( [ $this, 'parseNamespace' ],
+						   (array)$params['notnamespace'] );
 		}
 	}
 
@@ -117,4 +117,3 @@ implements DpleFeatureInterface {
 		}
 	}
 }
-?>

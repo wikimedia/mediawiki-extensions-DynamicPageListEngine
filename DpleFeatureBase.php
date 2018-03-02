@@ -108,7 +108,7 @@ class DpleFeatureBase {
 	 * @return *array* Possibly empty array of Title objects.
 	 */
 	public function arrayToTitles( $pages, $ns ) {
-		$titles = array();
+		$titles = [];
 
 		foreach ( (array)$pages as $page ) {
 			/** When processing title strings, decode html entities (such as
@@ -248,7 +248,6 @@ class DpleFeatureBase {
 	 * conversion.
 	 */
 	public function getResultConverters() {
-		return array();
+		return [];
 	}
 }
-?>

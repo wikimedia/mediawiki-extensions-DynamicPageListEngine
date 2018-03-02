@@ -54,12 +54,12 @@ implements DpleFeatureInterface {
 		parent::__construct( $features );
 
 		if ( isset( $params['extrax'] ) ) {
-			$this->extraxs_ = array_map( array( $this, 'parseText' ),
+			$this->extraxs_ = array_map( [ $this, 'parseText' ],
 				(array)$params['extrax'] );
 		}
 
 		if ( isset( $params['notextrax'] ) ) {
-			$this->notExtraxs_ = array_map( array( $this, 'parseText' ),
+			$this->notExtraxs_ = array_map( [ $this, 'parseText' ],
 				(array)$params['notextrax'] );
 		}
 	}
@@ -105,20 +105,20 @@ implements DpleFeatureInterface {
 
 		/** Otherwise, also fetch the sort key for the first
 		 *	category. */
-		$query->addVars( array( 'sortkeyx' => 'clx1.cl_sortkey_prefix' ) );
+		$query->addVars( [ 'sortkeyx' => 'clx1.cl_sortkey_prefix' ] );
 
 		if ( $this->extraxs_ ) {
-			$extraxConds = array();
-			
+			$extraxConds = [];
+
 			/** Add conditions based on @ref $extraxs_. */
 			foreach ( $this->extraxs_ as $extrax ) {
 				$extraxConds[] = 'clx1.cl_sortkey_prefix'
 					. $dbr->buildLike( $dbr->anyString(), "|$extrax" );
 			}
-			
+
 			$query->addConds( '(' . implode( ' OR ', $extraxConds ) . ')' );
 		}
-		
+
 		/** Add conditions based on @ref $notExtraxs_. */
 		foreach ( (array)$this->notExtraxs_ as $extrax ) {
 			$query->addConds( 'clx1.cl_sortkey_prefix NOT '
@@ -126,4 +126,3 @@ implements DpleFeatureInterface {
 		}
 	}
 }
-?>

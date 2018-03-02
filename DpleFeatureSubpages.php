@@ -37,7 +37,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
-class DpleFeatureSubpages extends DpleFeatureBase 
+class DpleFeatureSubpages extends DpleFeatureBase
 implements DpleFeatureInterface {
 	/* == private variables == */
 
@@ -48,7 +48,7 @@ implements DpleFeatureInterface {
 	/// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
-		
+
 		$this->subpages_ = $this->parseIncludeExclude(
 			isset( $params['subpages'] ) ? $params['subpages'] : null );
 	}
@@ -81,4 +81,3 @@ implements DpleFeatureInterface {
 		}
 	}
 }
-?>

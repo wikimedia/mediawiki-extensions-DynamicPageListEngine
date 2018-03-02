@@ -29,16 +29,16 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
-class DpleFeatureLinksto extends DpleFeatureLinksBase 
+class DpleFeatureLinksto extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
 	/// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
-		parent::__construct( $params, $features,
+		parent::__construct(
+			$params, $features,
 			'linksto', NS_MAIN,
 			'pagelinks', 'pl', 'pl_namespace',
-			array( 'page_id = $table.pl_from',
-				'$table.pl_namespace = $ns',
-				'$table.pl_title = $dbkey' ) );
+			[ 'page_id = $table.pl_from',
+			  '$table.pl_namespace = $ns',
+			  '$table.pl_title = $dbkey' ] );
 	}
 }
-?>

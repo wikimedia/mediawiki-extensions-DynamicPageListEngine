@@ -187,8 +187,7 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 					$this->notLinkedTitles_[$i] ) );
 
 			$query->addConds(
-				array( "{$this->tableAlias_}{$n}.{$this->tableColumn_}"
-					=> null ) );
+				[ "{$this->tableAlias_}{$n}.{$this->tableColumn_}" => null ] );
 			$n++;
 		}
 	}
@@ -212,14 +211,13 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 		 * - `$ns` => namespace index of the title to join
 		 * - `$dbkey` => DB key of the title to join
 		 */
-		$replace = array(
+		$replace = [
 			'$table' => "{$this->tableAlias_}$n",
 			'$id' => $title->getArticleID(),
 			'$ns' => $title->getNamespace(),
-			'$dbkey' => $dbr->addQuotes( $title->getDBKey() ) );
+			'$dbkey' => $dbr->addQuotes( $title->getDBKey() ) ];
 
 		return str_replace( array_keys( $replace ), array_values( $replace ),
 			$this->joinConds_ );
 	}
 }
-?>

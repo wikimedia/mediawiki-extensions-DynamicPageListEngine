@@ -26,16 +26,17 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
-class DpleFeatureContains extends DpleFeatureLinksBase 
+class DpleFeatureContains extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
 	/// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
-		parent::__construct( $params, $features,
+		parent::__construct(
+			$params, $features,
 			'contains', NS_MAIN,
 			'categorylinks', 'clx', 'cl_to',
-			array( 'page_title = $table.cl_to',
-				'page_namespace = ' . NS_CATEGORY,
-				'$table.cl_from = $id' ) );
+			[ 'page_title = $table.cl_to',
+			  'page_namespace = ' . NS_CATEGORY,
+			  '$table.cl_from = $id' ] );
 	}
 
 	/// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
@@ -48,4 +49,3 @@ implements DpleFeatureInterface {
 		}
 	}
 }
-?>

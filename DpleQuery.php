@@ -163,7 +163,7 @@ class DpleQuery implements Countable {
 	 * @param string|array $joinConds Additional JOIN conditions.
 	 */
 	public function addJoinCond( $table, $joinType, $conds ) {
-		$this->joinConds_[$table] = array( $joinType, $conds );
+		$this->joinConds_[$table] = [ $joinType, $conds ];
 	}
 
 	/* == operations == */
@@ -179,4 +179,3 @@ class DpleQuery implements Countable {
 			$this->options_, $this->joinConds_ );
 	}
 }
-?>

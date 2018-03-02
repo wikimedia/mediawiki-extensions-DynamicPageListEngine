@@ -40,7 +40,7 @@ class DpleUtils {
 		 * - isTalkPage
 		 * - isRedirect
 		 */
-		return array(
+		return [
 			'id' => $title->getArticleId(),
 			'namespace' => $title->getNamespace(),
 			'nsText' => $title->getNsText(),
@@ -53,7 +53,7 @@ class DpleUtils {
 			'isRedirect' => $title->isRedirect(),
 			'isSubpage' => $title->isSubpage(),
 			'isTalkPage' => $title->isTalkPage()
-		);
+			];
 	}
 
 	/**
@@ -68,10 +68,10 @@ class DpleUtils {
 		if ( !isset( $title ) || !$title->isRedirect() ) {
 			return;
 		}
-		
+
 		$title = WikiPage::factory( $title )->getContent()
 			->getRedirectTarget();
-		
+
 		if ( !isset( $title ) ) {
 			return;
 		}
@@ -79,4 +79,3 @@ class DpleUtils {
 		return static::title2array( $title );
 	}
 }
-?>

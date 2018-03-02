@@ -73,19 +73,20 @@ implements DpleFeatureInterface {
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
-		foreach ( array(
+		foreach (
+			[
 				'createdby' => 'createdby_',
 				'notcreatedby' => 'notCreatedby_',
 				'modifiedby' => 'modifiedby_',
 				'notmodifiedby' => 'notModifiedby_',
 				'lastmodifiedby' => 'lastmodifiedby_',
 				'notlastmodifiedby' => 'notLastmodifiedby_'
-			) as $key => $member ) {
+				] as $key => $member ) {
 
 			if ( isset( $params[$key] ) ) {
 				$this->$member =
 					array_map( array( $this, 'parseUser' ),
-						(array)$params[$key] );
+							   (array)$params[$key] );
 			}
 		}
 	}
@@ -161,9 +162,10 @@ implements DpleFeatureInterface {
 
 			$cond = $this->buildIn( $this->createdby_ );
 
-			$query->addJoinCond( $table, 'INNER JOIN',
-				array( 'page_id = rev_c.rev_page',
-					'rev_c.rev_parent_id = 0' ) );
+			$query->addJoinCond(
+				$table, 'INNER JOIN',
+				[ 'page_id = rev_c.rev_page',
+				  'rev_c.rev_parent_id = 0' ] );
 
 			$query->addConds( "rev_c.rev_user $cond" );
 		}
@@ -176,9 +178,10 @@ implements DpleFeatureInterface {
 
 			$cond = 'NOT' . $this->buildIn( $this->notCreatedby_ );
 
-			$query->addJoinCond( $table, 'INNER JOIN',
-				array( 'page_id = rev_nc.rev_page',
-					'rev_nc.rev_parent_id = 0' ) );
+			$query->addJoinCond(
+				$table, 'INNER JOIN',
+				[ 'page_id = rev_nc.rev_page',
+				  'rev_nc.rev_parent_id = 0' ] );
 
 			$query->addConds( "rev_nc.rev_user $cond" );
 		}
@@ -191,8 +194,9 @@ implements DpleFeatureInterface {
 
 			$cond = $this->buildIn( $this->lastmodifiedby_ );
 
-			$query->addJoinCond( $table, 'INNER JOIN',
-				array( 'page_latest = rev_l.rev_id' ) );
+			$query->addJoinCond(
+				$table, 'INNER JOIN',
+				[ 'page_latest = rev_l.rev_id' ] );
 
 			$query->addConds( "rev_l.rev_user $cond" );
 		}
@@ -205,8 +209,9 @@ implements DpleFeatureInterface {
 
 			$cond = 'NOT' . $this->buildIn( $this->notLastmodifiedby_ );
 
-			$query->addJoinCond( $table, 'INNER JOIN',
-				array( 'page_latest = rev_nl.rev_id' ) );
+			$query->addJoinCond(
+				$table, 'INNER JOIN',
+				[ 'page_latest = rev_nl.rev_id' ] );
 
 			$query->addConds( "rev_nl.rev_user $cond" );
 		}
@@ -219,8 +224,9 @@ implements DpleFeatureInterface {
 
 			$cond = $this->buildIn( $this->modifiedby_ );
 
-			$query->addJoinCond( $table, 'INNER JOIN',
-				array( 'page_id = rev_m.rev_page' ) );
+			$query->addJoinCond(
+				$table, 'INNER JOIN',
+				[ 'page_id = rev_m.rev_page' ] );
 
 			$query->addConds( "rev_m.rev_user $cond" );
 
@@ -235,11 +241,12 @@ implements DpleFeatureInterface {
 
 			$cond = $this->buildIn( $this->notModifiedby_ );
 
-			$query->addJoinCond( $table, 'LEFT OUTER JOIN',
-				array( 'page_id = rev_nm.rev_page',
-					"rev_nm.rev_user $cond" ) );
+			$query->addJoinCond(
+				$table, 'LEFT OUTER JOIN',
+				[ 'page_id = rev_nm.rev_page',
+				  "rev_nm.rev_user $cond" ] );
 
-			$query->addConds( array( 'rev_nm.rev_page' => null ) );
+			$query->addConds( [ 'rev_nm.rev_page' => null ] );
 
 			$query->setOption( 'DISTINCT' );
 		}
@@ -253,7 +260,7 @@ implements DpleFeatureInterface {
 	 * @return *string* ' IN (...)' where ... is a list of user IDs.
 	 */
 	public function buildIn( array $users ) {
-		$list = array();
+		$list = [];
 
 		foreach ( $users as $user ) {
 			$list[] = $user->getId();
@@ -262,4 +269,3 @@ implements DpleFeatureInterface {
 		return ' IN (' . implode( ',', $list ) . ')';
 	}
 }
-?>

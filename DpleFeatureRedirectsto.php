@@ -30,12 +30,13 @@ class DpleFeatureRedirectsto extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
 	/// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
-		parent::__construct( $params, $features,
+		parent::__construct(
+			$params, $features,
 			'redirectsto', NS_MAIN,
 			'redirect', 'rd', 'rd_namespace',
-			array( 'page_id = $table.rd_from',
-				'$table.rd_namespace = $ns',
-				'$table.rd_title = $dbkey' ) );
+			[ 'page_id = $table.rd_from',
+			  '$table.rd_namespace = $ns',
+			  '$table.rd_title = $dbkey' ] );
 	}
 
 	/* == operations == */
@@ -46,7 +47,6 @@ implements DpleFeatureInterface {
 
 		/** For efficiency, limit selection to redirects. */
 		if( $this->linkedCount_ )
-			$query->addConds( array( 'page_is_redirect' => 1 ) );
+			$query->addConds( [ 'page_is_redirect' => 1 ] );
 	}
 }
-?>

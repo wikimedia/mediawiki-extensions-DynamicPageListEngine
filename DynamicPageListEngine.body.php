@@ -72,9 +72,9 @@ class DynamicPageListEngine implements Countable {
 		}
 
 		/** Construct the query. */
-		$this->query_ = new DpleQuery( 'page',
-			array( 'page_namespace', 'page_title', 'page_is_redirect',
-				'page_len' ) );
+		$this->query_ = new DpleQuery(
+			'page',
+			[ 'page_namespace', 'page_title', 'page_is_redirect', 'page_len' ] );
 
 		if ( !$wgDisableCounters ) {
 			$this->query_->addVars( 'page_counter' );
@@ -143,7 +143,7 @@ class DynamicPageListEngine implements Countable {
 	 */
 	public function getResult( $method = 'toTitles' ) {
 		return call_user_func(
-			array( $this->features_[$this->converters_[$method]], $method ),
+			[ $this->features_[$this->converters_[$method]], $method ],
 			$this->query_->getResult() );
 	}
 }

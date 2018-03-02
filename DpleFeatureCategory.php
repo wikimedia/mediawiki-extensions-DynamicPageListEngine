@@ -33,10 +33,11 @@ implements DpleFeatureInterface {
 
 	/// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
-		parent::__construct( $params, $features,
+		parent::__construct(
+			$params, $features,
 			'category', NS_CATEGORY,
 			'categorylinks', 'cl', 'cl_to',
-			array( 'page_id = $table.cl_from', '$table.cl_to = $dbkey' ) );
+			[ 'page_id = $table.cl_from', '$table.cl_to = $dbkey' ] );
 	}
 
 	/* == operations == */
@@ -47,8 +48,7 @@ implements DpleFeatureInterface {
 
 		/** Also select timestamp if at least one category is specified. */
 		if ( $this->getLinkedCount() ) {
-			$query->addVars( array( 'cl_timestamp' => 'cl1.cl_timestamp' ) );
+			$query->addVars( [ 'cl_timestamp' => 'cl1.cl_timestamp' ] );
 		}
 	}
 }
-?>

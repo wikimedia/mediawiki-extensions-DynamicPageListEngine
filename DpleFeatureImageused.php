@@ -28,14 +28,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
-class DpleFeatureImageused extends DpleFeatureLinksBase 
+class DpleFeatureImageused extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
 	/// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
-		parent::__construct( $params, $features,
+		parent::__construct(
+			$params, $features,
 			'imageused', NS_FILE,
 			'imagelinks', 'il', 'il_to',
-			array( 'page_id = $table.il_from', '$table.il_to = $dbkey' ) );
+			[ 'page_id = $table.il_from', '$table.il_to = $dbkey' ] );
 	}
 }
-?>

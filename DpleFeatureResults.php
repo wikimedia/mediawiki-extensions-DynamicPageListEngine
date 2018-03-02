@@ -43,12 +43,12 @@ implements DpleFeatureInterface {
 
 	/// @copydoc DpleFeatureBase::getResultConverters
 	public function getResultConverters() {
-		return array(
+		return [
 			'toPagenames',
 			'toFullpagenames',
 			'toTitles',
 			'toArrays',
-		);
+			];
 	}
 
 	/* == operations == */
@@ -67,7 +67,7 @@ implements DpleFeatureInterface {
 		}
 
 		/** Otherwise create it from $result. */
-		$this->pagenames_ = array();
+		$this->pagenames_ = [];
 
 		foreach ( $result as $row ) {
 			$this->pagenames_[] = strtr( $row->page_title, '_', ' ' );
@@ -90,7 +90,7 @@ implements DpleFeatureInterface {
 		}
 
 		/** Otherwise create it from $result. */
-		$this->fullpagenames_ = array();
+		$this->fullpagenames_ = [];
 
 		global $wgContLang;
 
@@ -125,7 +125,7 @@ implements DpleFeatureInterface {
 		}
 
 		/** Otherwise create it from $result. */
-		$this->titles_ = array();
+		$this->titles_ = [];
 
 		$extraFeature = $this->getFeature( 'DpleFeatureExtra' );
 
@@ -157,10 +157,10 @@ implements DpleFeatureInterface {
 			 * - `target`=> Array of properties of the target page, if
 			 *	 the `redirect` parameter is set to `resolve`.
 			 */
-			$title->dpleCustom = array(
+			$title->dpleCustom = [
 				'withoutsuffix' => preg_replace( '/\.[^\.]*$/', '', $title->getText() ),
 				'length' => $row->page_len
-				);
+				];
 
 			if ( !$wgDisableCounters ) {
 				$title->dpleCustom['counter'] = $row->page_counter;
@@ -228,7 +228,7 @@ implements DpleFeatureInterface {
 		}
 
 		/** Otherwise create from result of toTitles(). */
-		$this->arrays_ = array();
+		$this->arrays_ = [];
 
 		foreach ( $this->toTitles( $result ) as $title ) {
 			$array = DpleUtils::title2array( $title );
@@ -242,4 +242,3 @@ implements DpleFeatureInterface {
 		return $this->arrays_;
 	}
 }
-?>
