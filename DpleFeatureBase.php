@@ -105,7 +105,7 @@ class DpleFeatureBase {
 	 * @param int $ns Default namespace to use for pages which do not
 	 * specify one.
 	 *
-	 * @return *array* Possibly empty array of Title objects.
+	 * @return array Possibly empty array of Title objects.
 	 */
 	public function arrayToTitles( $pages, $ns ) {
 		$titles = [];
@@ -131,7 +131,7 @@ class DpleFeatureBase {
 	 *
 	 * @param string $default Default value.
 	 *
-	 * @return *string* One of `include|exclude|only`. $default if
+	 * @return string One of `include|exclude|only`. $default if
 	 * $param is null or invalid.
 	 */
 	public function parseIncludeExclude( $param,
@@ -152,7 +152,7 @@ class DpleFeatureBase {
 	 *
 	 * @param int|string $param Namespace name or namespace index.
 	 *
-	 * @return *int* Namespace index.
+	 * @return int Namespace index.
 	 */
 	public function parseNamespace( $param ) {
 		if( is_numeric( $param ) ) {
@@ -185,7 +185,7 @@ class DpleFeatureBase {
 	 *
 	 * @param string|null $param Text.
 	 *
-	 * @return *string|null* Value or NULL.
+	 * @return string|null Value or NULL.
 	 */
 	public function parseText( $param ) {
 		if ( isset( $param ) && $param != '' ) {
@@ -201,7 +201,7 @@ class DpleFeatureBase {
 	 *
 	 * @param string|null $param Substring.
 	 *
-	 * @return *string|null* Value with spaces replaced by underscores.
+	 * @return string|null Value with spaces replaced by underscores.
 	 */
 	public function parseTitleSubstring( $param ) {
 		if ( isset( $param ) && $param != '' ) {
@@ -216,7 +216,7 @@ class DpleFeatureBase {
 	 *
 	 * @param int|string $param User name or user id.
 	 *
-	 * @return *User* User object.
+	 * @return User User object.
 	 */
 	public function parseUser( $param ) {
 		/** A numeric parameter (including a numeric literal) is
@@ -242,7 +242,7 @@ class DpleFeatureBase {
 	 * @brief Return the names of the result converters defined in
 	 * this class.
 	 *
-	 * @return *array* Array of the names of all methods that can be
+	 * @return array Array of the names of all methods that can be
 	 * used to convert results. Each such method should get one
 	 * parameter of type ResultWrapper and return the result of the
 	 * conversion.

@@ -86,7 +86,7 @@ extends Scribunto_LuaLibraryBase {
 	 *
 	 * @param string $method Method to transform the result.
 	 *
-	 * @return *array* Result of $method applied to the query
+	 * @return array Result of $method applied to the query
 	 * result. For the default value `toArrays`, return
 	 * numerically-indexed array of associative arrays, each of which
 	 * represents a page. See DpleFeatureResults::toArrays() for
@@ -121,7 +121,7 @@ extends Scribunto_LuaLibraryBase {
 	 *
 	 * @param array $params Array of parameters.
 	 *
-	 * @return *array* Numerically-indexed array of full page names.
+	 * @return array Numerically-indexed array of full page names.
 	 */
 	public function getFullpagenames( $params ) {
 		return $this->getPages( $params, 'toFullpagenames' );
@@ -132,7 +132,7 @@ extends Scribunto_LuaLibraryBase {
 	 *
 	 * @param array $params Array of parameters.
 	 *
-	 * @return *array* Numerically-indexed array of page names.
+	 * @return array Numerically-indexed array of page names.
 	 */
 	public function getPagenames( $params ) {
 		return $this->getPages( $params, 'toPagenames' );
