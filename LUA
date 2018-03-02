@@ -4,7 +4,7 @@
 -->  
 == Lua library ==
 
-All functions explained below take a single argument which is an associative array of parameters. The recognized parameters are explanined in [[{{NAMESPACE}}:{{BASEPAGENAME}}#Usage|Usage]].
+All functions explained below take a single argument which is an associative array of parameters. The recognized parameters are explained in [[{{NAMESPACE}}:{{BASEPAGENAME}}#Usage|Usage]].
 
 === mw.ext.dpl.getFullpagenames ===
 
