@@ -73,7 +73,7 @@ extends Scribunto_LuaLibraryBase {
 		];
 
 		$this->getEngine()->registerInterface(
-			__DIR__ . '/DynamicPageListEngine.lua',
+			__DIR__ . '/../DynamicPageListEngine.lua',
 			$lib, [] );
 	}
 
