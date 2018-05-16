@@ -1,9 +1,9 @@
 <!-- 
      page taken from 
-     http://www.mediawiki.org/wiki/Extension:DynamicPageListEngine/Description 
+     https://www.mediawiki.org/wiki/Extension:DynamicPageListEngine/Description 
 -->  
 
-The '''{{BASEPAGENAME}}''' extension is a backend providing dynamic page lists, which can be used on [[w:php|]] level for other extensions, or on [[w:Lua (programming language)|Lua]] level with the [[Extension:Scribunto|Scribunto]] extension. The page selection and sorting criteria are compatible with [[Extension:DynamicPageList (Wikimedia)|DynamicPageList (Wikimedia)]].
+The '''DynamicPageListEngine''' extension is a backend providing dynamic page lists, which can be used on [[w:php|]] level for other extensions, or on [[w:Lua (programming language)|Lua]] level with the [[Extension:Scribunto|Scribunto]] extension. The page selection and sorting criteria are compatible with [[Extension:DynamicPageList (Wikimedia)|DynamicPageList (Wikimedia)]].
 
 Given that there are already [[Extension:DynamicPageList (Wikimedia)|DynamicPageList (Wikimedia)]] and [[Extension:DynamicPageList (third-party)|DynamicPageList (third-party)]], which are not completely compatible, you might be wondering why yet another such extension. In short:
 # I needed dynamic page lists on Lua level, and none of the two existing extensions provided that.

@@ -13,13 +13,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
- * @author [RV1971](http://www.mediawiki.org/wiki/User:RV1971)
+ * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  *
  */
 
 /**
  * @brief
- * [Scribunto](http://www.mediawiki.org/wiki/Extension:Scribunto) Lua
+ * [Scribunto](https://www.mediawiki.org/wiki/Extension:Scribunto) Lua
  * interface to DynamicPageListEngine.
  *
  * @ingroup Extensions
@@ -101,7 +101,7 @@ extends Scribunto_LuaLibraryBase {
 		}
 
 		/** Add the page to the [tracking category]
-		 * (http://www.mediawiki.org/wiki/Help:Tracking_categories)
+		 * (https://www.mediawiki.org/wiki/Help:Tracking_categories)
 		 * `dple-tracking-category`. */
 		$this->getParser()->addTrackingCategory( 'dple-tracking-category' );
 

@@ -13,7 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
- * @author [RV1971](http://www.mediawiki.org/wiki/User:RV1971)
+ * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  *
  */
 
@@ -38,12 +38,12 @@ implements DpleFeatureInterface {
 	/* == private variables == */
 
 	/** @brief Array of [Namespace]
-	 * (http://www.mediawiki.org/wiki/Help:Namespace) indexes to
+	 * (https://www.mediawiki.org/wiki/Help:Namespace) indexes to
 	 * choose from.*/
 	private $namespaces_;
 
 	/** @brief Array of [Namespace]
-	 * (http://www.mediawiki.org/wiki/Help:Namespace) indexes to
+	 * (https://www.mediawiki.org/wiki/Help:Namespace) indexes to
 	 * exclude.*/
 	private $notNamespaces_;
 

@@ -1,6 +1,6 @@
 <!-- 
      page taken from 
-     http://www.mediawiki.org/wiki/Extension:DynamicPageListEngine/Usage
+     https://www.mediawiki.org/wiki/Extension:DynamicPageListEngine/Usage
 -->  
 == Usage ==
 
@@ -9,8 +9,6 @@ For use on php level, please refer to the integrated doxygen documentation. For 
 The accepted parameters and other aspects of the behaviour are implemented as features corresponding to php classes. With the variable <code>[[{{NAMESPACE}}:{{BASEPAGENAME}}#Configuration|$wgDynamicPageListEngineFeatures]]</code> in [[{{NAMESPACE}}:{{BASEPAGENAME}}#LocalSettings.php|LocalSettings.php]] you can configure which features you want to enable. The bundled features are described in the following sections, where the titles correspond to the class names without the prefix "DynamicPageListEngineFeature".
 
 Unless otherwise stated, using arrays as parameter values return the intersection of the individual result sets. If the parameters contradict each other (e.g. the same namespace is nominated in <code>namespace</code> and in <code>not namespace</code>), the results are undefined.
-
-
 
 === Namespace ===
 
