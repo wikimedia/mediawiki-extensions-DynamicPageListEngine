@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hedda"
+		]
+	},
+	"dynamicpagelistengine-desc": "[https://www.mediawiki.org/wiki/Extension:Scribunto Modüller] ve diğer uzantılara yapılandırılabilir ve genişletilebilir özellikler içeren dinamik sayfa listeleri sağlayın",
+	"dple-tracking-category": "DinamikSayfaListesiMotoru kullanan sayfalar",
+	"dple-error-invalid-ns-index": "DinamikSayfaListesiMotoru hatası: $1 indeksine sahip herhangi bir ad alanı yok",
+	"dple-error-no-criteria": "DinamikSayfaListesiMotoru hatası: Hiçbir seçim kriteri belirtilmemiş.",
+	"dple-error-too-expensive": "DinamikSayfaListesiMotoru hatası: En fazla $2 limitine kadar izin verilirken birleştirilmiş $1 veritabanı tablosundan pahalı bir sorgulama yapmayı deneyin",
+	"dple-error-too-many-expensive-functions": "DinamikSayfaListesiMotoru hatası: Bu sayfada çok fazla pahalı fonksiyon kullanıldı."
+}
