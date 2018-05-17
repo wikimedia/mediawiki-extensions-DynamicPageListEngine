@@ -3,7 +3,7 @@
     "version": "1.1.0-rc1",
     "type": "other",
     "author": [
-        "[http://www.mediawiki.org/wiki/User:RV1971 RV1971]"
+        "[https://www.mediawiki.org/wiki/User:RV1971 RV1971]"
     ],
     "descriptionmsg": "dynamicpagelistengine-desc",
     "url": "https://www.mediawiki.org/wiki/Extension:DynamicPageListEngine",
