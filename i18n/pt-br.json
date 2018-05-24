@@ -8,6 +8,6 @@
 	"dple-tracking-category": "Páginas que usam o DynamicPageListEngine",
 	"dple-error-invalid-ns-index": "Erro do DynamicPageListEngine: não existe nenhum espaço nominal (domínio) com o índice $1.",
 	"dple-error-no-criteria": "Erro do DynamicPageListEngine: não foi especificado nenhum critério de seleção.",
-	"dple-error-too-expensive": "Erro do DynamicPageListEngine: tentativa de realizar uma consulta com a exigência de ''join'' de $1 tabelas da base de dados, quando só é permitido um máximo de $1.",
+	"dple-error-too-expensive": "Erro do DynamicPageListEngine: tentativa de realizar uma consulta com a exigência de ''join'' de $1 tabelas da base de dados, quando só é permitido um máximo de $2.",
 	"dple-error-too-many-expensive-functions": "Erro do DynamicPageListEngine: são usadas nesta página demasiadas funções exigentes."
 }
