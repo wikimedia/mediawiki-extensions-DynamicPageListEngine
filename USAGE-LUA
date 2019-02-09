@@ -22,7 +22,7 @@ Select and sort pages according to the parameters and return an array of page na
 
 <code>mw.ext.dpl.getPages{ parameters }</code>
 
-Select and sort pages according to the parameters and return an array of associative arrays, each of which represents a page. The latter contain the following items which have the same meaning as the corresponding properties of [[Extension:Scribunto/Lua_reference_manual#Title_objects|mw.title objects]]: <code>namespace, nsText, text, prefixedText, baseText, subpageText, canTalk, isContentPage, isSubpage, isTalkPage, isRedirect</code>. In addition, the following items are provided:
+Select and sort pages according to the parameters and return an array of associative arrays, each of which represents a page. The latter contain the following items which have the same meaning as the corresponding properties of [[Extension:Scribunto/Lua_reference_manual#Title_objects|mw.title objects]]: <code>namespace, nsText, text, prefixedText, baseText, subpageText, canHaveTalkPage, isContentPage, isSubpage, isTalkPage, isRedirect</code>. In addition, the following items are provided:
 ; withoutsuffix: Page name without suffix (useful for filenames, but always defined in order to simplify usage).
 ; length: Uncompressed length in bytes of the page's current source text.
 ; categoryadd: Timestamp of addition to the first category specified with the <code>category</code> parameter, if any.

@@ -34,7 +34,7 @@ class DpleUtils {
 		 * - prefixedText
 		 * - baseText
 		 * - subpageText
-		 * - canTalk
+		 * - canHaveTalkPage
 		 * - isContentPage
 		 * - isSubpage
 		 * - isTalkPage
@@ -48,7 +48,7 @@ class DpleUtils {
 			'prefixedText' => $title->getPrefixedText(),
 			'baseText' => $title->getBaseText(),
 			'subpageText' => $title->getSubpageText(),
-			'canTalk' => $title->canTalk(),
+			'canHaveTalkPage' => $title->canHaveTalkPage(),
 			'isContentPage' => $title->isContentPage(),
 			'isRedirect' => $title->isRedirect(),
 			'isSubpage' => $title->isSubpage(),
