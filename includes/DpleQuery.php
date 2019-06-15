@@ -43,7 +43,7 @@ class DpleQuery implements Countable {
 	public function __construct( $tables = null, $vars = null, $conds = null,
 		$options = null, $joinConds = null ) {
 		/** Get a database object. */
-		$this->dbr_ = wfGetDB( DB_SLAVE );
+		$this->dbr_ = wfGetDB( DB_REPLICA );
 
 		/** Initialize the class members with the arguments. */
 
