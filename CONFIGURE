@@ -18,7 +18,7 @@ There is a number of parameters that can be customized in [[LocalSettings.php]].
 
 ; $wgDpleOrderCostMap: Cost of order methods in terms of database load, in units which should be vaguely comparable to those of <code>$wgDpleCondCostMap</code>.
 
-Unless you are ''very'' concerned about performance issues, you may simply enable all features in <code>$wgDpleFeatures</code> by copying it from the file <code>DynamicPageListEngine.php</code> any uncommenting everything. In that case, to limit performance impact, you might decide to set <code>$wgDpleMaxCost</code> to a low value which however permits to use each feature, for instance 3.
+Unless you are ''very'' concerned about performance issues, you may simply enable all features in <code>$wgDpleFeatures</code> by copying it from the file <code>extension.json</code> and setting everything to true. In that case, to limit performance impact, you might decide to set <code>$wgDpleMaxCost</code> to a low value which however permits to use each feature, for instance 3.
 
 === Messages ===
 

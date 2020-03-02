@@ -12,7 +12,7 @@
 		"MediaWiki": ">= 1.30.0"
 	},
 	"AutoloadClasses": {
-		"DynamicPageListEngine": "includes/DynamicPageListEngine.body.php",
+		"DynamicPageListEngine": "includes/DynamicPageListEngine.php",
 		"DpleFeatureBase": "includes/DpleFeatureBase.php",
 		"DpleFeatureInterface": "includes/DpleFeatureInterface.php",
 		"DpleFeatureCategory": "includes/DpleFeatureCategory.php",
