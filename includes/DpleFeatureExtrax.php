@@ -35,11 +35,13 @@ implements DpleFeatureInterface {
 	/* == private variables == */
 
 	/** @brief Extrax information pages to select should provide with
-	 * the category tag for the first category. */
+	 * the category tag for the first category.
+	 */
 	private $extraxs_;
 
 	/** @brief Extrax information pages to select should not provide
-	 * with the category tag for the first category. */
+	 * with the category tag for the first category.
+	 */
 	private $notExtraxs_;
 
 	/* == magic methods == */
@@ -79,8 +81,9 @@ implements DpleFeatureInterface {
 		 *	accounted for each item. Items in @ref $notExtraxs_ instead
 		 *	are put together with AND, which is typically efficient,
 		 *	and therefore only one unit is accounted for the whole
-		 *	array, if any. */
-		return (count( $this->extraxs_ ) + (int)(bool)$this->notExtraxs_)
+		 *	array, if any.
+		 */
+		return ( count( $this->extraxs_ ) + (int)(bool)$this->notExtraxs_ )
 			* parent::getCost();
 	}
 
@@ -99,7 +102,8 @@ implements DpleFeatureInterface {
 		$dbr = $query->getDbr();
 
 		/** Otherwise, also fetch the sort key for the first
-		 *	category. */
+		 *	category.
+		 */
 		$query->addVars( [ 'sortkeyx' => 'clx1.cl_sortkey_prefix' ] );
 
 		if ( $this->extraxs_ ) {

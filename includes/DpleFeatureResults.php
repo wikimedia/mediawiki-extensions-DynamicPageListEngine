@@ -170,7 +170,7 @@ implements DpleFeatureInterface {
 					if ( isset( $sortkey ) && $sortkey != '' ) {
 						$title->dpleCustom['sortkey'] = $sortkey;
 
-						if ( strpos( $sortkey, '|' ) !== FALSE ) {
+						if ( strpos( $sortkey, '|' ) !== false ) {
 							list( , $title->dpleCustom['extra'] ) =
 								explode( '|', $sortkey, 2 );
 						}
@@ -187,7 +187,7 @@ implements DpleFeatureInterface {
 					if ( isset( $sortkeyx ) && $sortkeyx != '' ) {
 						$title->dpleCustom['sortkeyx'] = $sortkeyx;
 
-						if ( strpos( $sortkeyx, '|' ) !== FALSE ) {
+						if ( strpos( $sortkeyx, '|' ) !== false ) {
 							list( , $title->dpleCustom['extrax'] ) =
 								explode( '|', $sortkeyx, 2 );
 						}

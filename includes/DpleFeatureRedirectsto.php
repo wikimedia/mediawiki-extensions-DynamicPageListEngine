@@ -41,7 +41,8 @@ implements DpleFeatureInterface {
 		parent::modifyQuery( $query );
 
 		/** For efficiency, limit selection to redirects. */
-		if( $this->linkedCount_ )
+		if ( $this->linkedCount_ ) {
 			$query->addConds( [ 'page_is_redirect' => 1 ] );
+		}
 	}
 }

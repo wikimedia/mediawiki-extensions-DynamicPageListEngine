@@ -51,11 +51,11 @@ implements DpleFeatureInterface {
 		 * For simplicity of implementation, 'unlimited' is
 		 * implemented just with unrealistically large numbers.
 		 */
-		if( !isset( $wgDpleMaxCost ) ) {
-			if( isset( $wgDLPAllowUnlimitedCategories )
+		if ( !isset( $wgDpleMaxCost ) ) {
+			if ( isset( $wgDLPAllowUnlimitedCategories )
 				&& $wgDLPAllowUnlimitedCategories ) {
 				$wgDpleMaxCost = 1000;
-			} elseif( isset( $wgDLPmaxCategories ) ) {
+			} elseif ( isset( $wgDLPmaxCategories ) ) {
 				$wgDpleMaxCost = $wgDLPmaxCategories;
 			} else {
 				$wgDpleMaxCost = 6;
@@ -108,8 +108,9 @@ implements DpleFeatureInterface {
 		}
 
 		/** Throw an exception if @ref $totalCost_ exceeds @ref
-		 *	$wgDpleMaxCost#. */
-		if( $this->totalCost_ > $wgDpleMaxCost ) {
+		 *	$wgDpleMaxCost#.
+		 */
+		if ( $this->totalCost_ > $wgDpleMaxCost ) {
 			throw new Scribunto_LuaError(
 				wfMessage( 'dple-error-too-expensive',
 					$this->totalCost_,

@@ -33,13 +33,12 @@ extends Scribunto_LuaLibraryBase {
 	 *
 	 * @param Scribunto_LuaEngine $engine Scribunto engine.
 	 *
-	 * @param array $extraLibraries Libraries to register.
+	 * @param array &$extraLibraries Libraries to register.
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onScribuntoExternalLibraries( $engine,
 		array &$extraLibraries ) {
-
 		$extraLibraries['mw.ext.dpl'] =
 			'Scribunto_LuaDynamicPageListEngineLibrary';
 
@@ -62,9 +61,9 @@ extends Scribunto_LuaLibraryBase {
 	/// Register this library.
 	public function register() {
 		$lib = [
-			'getFullpagenames' => array( $this, 'getFullpagenames' ),
-			'getPagenames' => array( $this, 'getPagenames' ),
-			'getPages' => array( $this, 'getPages' )
+			'getFullpagenames' => [ $this, 'getFullpagenames' ],
+			'getPagenames' => [ $this, 'getPagenames' ],
+			'getPages' => [ $this, 'getPages' ]
 		];
 
 		$this->getEngine()->registerInterface(
@@ -89,7 +88,8 @@ extends Scribunto_LuaLibraryBase {
 	 */
 	public function getPages( $params, $method = 'toArrays' ) {
 		/** Increment the [expensive function count]
-		 * (https://www.mediawiki.org/wiki/Manual:$wgExpensiveParserFunctionLimit). */
+		 * (https://www.mediawiki.org/wiki/Manual:$wgExpensiveParserFunctionLimit).
+		 */
 		if ( !$this->getParser()->incrementExpensiveFunctionCount() ) {
 			throw new Scribunto_LuaError( wfMessage(
 					'dple-error-too-many-expensive-functions' )->text() );
@@ -97,7 +97,8 @@ extends Scribunto_LuaLibraryBase {
 
 		/** Add the page to the [tracking category]
 		 * (https://www.mediawiki.org/wiki/Help:Tracking_categories)
-		 * `dple-tracking-category`. */
+		 * `dple-tracking-category`.
+		 */
 		$this->getParser()->addTrackingCategory( 'dple-tracking-category' );
 
 		$dpl = new DynamicPageListEngine( $params );

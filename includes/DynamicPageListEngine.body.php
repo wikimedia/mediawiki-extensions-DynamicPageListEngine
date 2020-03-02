@@ -34,7 +34,6 @@ class DynamicPageListEngine implements Countable {
 
 	private $query_; ///< DpleQuery object.
 
-
 	/* == magic methods == */
 
 	/**
@@ -52,7 +51,8 @@ class DynamicPageListEngine implements Countable {
 		/** Construct all enabled features, regardless of whether they
 		 *	are relevant for a particular request. This simplifies
 		 *	feature development since the features do not need to
-		 *	provide information of what they are relevant for. */
+		 *	provide information of what they are relevant for.
+		 */
 		foreach ( $wgDpleFeatures as $class => $enabled ) {
 			if ( $enabled ) {
 				$this->features_[$class] = new $class(

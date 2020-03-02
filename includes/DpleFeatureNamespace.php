@@ -34,12 +34,14 @@ implements DpleFeatureInterface {
 
 	/** @brief Array of [Namespace]
 	 * (https://www.mediawiki.org/wiki/Help:Namespace) indexes to
-	 * choose from.*/
+	 * choose from.
+	 */
 	private $namespaces_;
 
 	/** @brief Array of [Namespace]
 	 * (https://www.mediawiki.org/wiki/Help:Namespace) indexes to
-	 * exclude.*/
+	 * exclude.
+	 */
 	private $notNamespaces_;
 
 	/* == magic methods == */

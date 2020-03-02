@@ -28,7 +28,7 @@ interface DpleFeatureInterface {
 	 *
 	 * @param array $params Array of parameters.
 	 *
-	 * @param array $features Array of feature objects constructed so
+	 * @param array &$features Array of feature objects constructed so
 	 * far.
 	 */
 	public function __construct( array $params, array &$features );
@@ -39,7 +39,7 @@ interface DpleFeatureInterface {
 	/**
 	 * @brief Modify a given query.
 	 *
-	 * @param DpleQuery $query Query object.
+	 * @param DpleQuery &$query Query object.
 	 */
 	public function modifyQuery( DpleQuery &$query );
 

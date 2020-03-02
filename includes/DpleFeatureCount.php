@@ -57,11 +57,11 @@ implements DpleFeatureInterface {
 		 * implemented just with unrealistically large numbers.
 		 */
 
-		if( !isset( $wgDpleMaxResultCount ) ) {
-			if( isset( $wgDLPAllowUnlimitedResults )
+		if ( !isset( $wgDpleMaxResultCount ) ) {
+			if ( isset( $wgDLPAllowUnlimitedResults )
 				&& $wgDLPAllowUnlimitedResults ) {
 				$wgDpleMaxResultCount = 100000;
-			} elseif( isset( $wgDLPMaxResultCount ) ) {
+			} elseif ( isset( $wgDLPMaxResultCount ) ) {
 				$wgDpleMaxResultCount = $wgDLPMaxResultCount;
 			} else {
 				$wgDpleMaxResultCount = 200;
@@ -71,7 +71,7 @@ implements DpleFeatureInterface {
 
 	/* == private variables == */
 
-	private $count_; /**< @brief Maxium number of records to fetch. */
+	private $count_; /** < @brief Maxium number of records to fetch. */
 
 	/* == magic methods == */
 
@@ -109,11 +109,13 @@ implements DpleFeatureInterface {
 
 			if ( $count < 1 ) {
 				/** Return 1 if $param is less then 1 (including the
-				 *	case that it is invalid). */
+				 *	case that it is invalid).
+				 */
 				$count = 1;
 			} elseif ( $count > $wgDpleMaxResultCount ) {
 				/** Return @ref $wgDpleMaxResultCount
-				 *	if a larger value than that was requested. */
+				 *	if a larger value than that was requested.
+				 */
 				$count = $wgDpleMaxResultCount;
 			}
 		} else {

@@ -121,13 +121,14 @@ implements DpleFeatureInterface {
 		 *	each item. Items in @ref $notTitleprefixes_ etc. instead
 		 *	are put together with AND, which is typically efficient,
 		 *	and therefore only one unit is accounted for each
-		 *	array. */
-		return (count( $this->titleprefixes_ )
+		 *	array.
+		 */
+		return ( count( $this->titleprefixes_ )
 			+ count( $this->titlesuffixes_ )
 			+ count( $this->titlecontains_ )
 			+ (int)(bool)$this->notTitleprefixes_
 			+ (int)(bool)$this->notTitlesuffixes_
-			+ (int)(bool)$this->notTitlecontains_) * parent::getCost();
+			+ (int)(bool)$this->notTitlecontains_ ) * parent::getCost();
 	}
 
 	/* == operations == */

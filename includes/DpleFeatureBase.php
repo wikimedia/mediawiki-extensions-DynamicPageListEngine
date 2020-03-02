@@ -38,13 +38,14 @@ class DpleFeatureBase {
 	/**
 	 * @brief Constructor.
 	 *
-	 * @param array $features Array of feature objects constructed so
+	 * @param array &$features Array of feature objects constructed so
 	 * far.
 	 */
 	public function __construct( array &$features ) {
 		/** Save the reference to the features array in $features_,
 		 *	thus allowing a feature to access other features, once all
-		 *	features have been constructed. */
+		 *	features have been constructed.
+		 */
 		$this->features_ = &$features;
 	}
 
@@ -85,7 +86,8 @@ class DpleFeatureBase {
 		 *	$wgDpleCondCostMap for the present class,
 		 *	or 0 if there is no entry. Most features potentially
 		 *	generating a nonzero cost will override this, and in most
-		 *	cases use this in its computation. */
+		 *	cases use this in its computation.
+		 */
 		return isset( $wgDpleCondCostMap[get_class( $this )] )
 			? $wgDpleCondCostMap[get_class( $this )] : 0;
 	}
@@ -107,11 +109,12 @@ class DpleFeatureBase {
 
 		foreach ( (array)$pages as $page ) {
 			/** When processing title strings, decode html entities (such as
-			 *	&amp;. */
+			 *	&amp;.
+			 */
 			$title = Title::makeTitleSafe( $ns, html_entity_decode( $page ) );
 
 			/** Silently ignore pages that do not exist. */
-			if( isset( $title ) ) {
+			if ( isset( $title ) ) {
 				$titles[] = $title;
 			}
 		}
@@ -150,12 +153,13 @@ class DpleFeatureBase {
 	 * @return int Namespace index.
 	 */
 	public function parseNamespace( $param ) {
-		if( is_numeric( $param ) ) {
+		if ( is_numeric( $param ) ) {
 			/** A numeric parameter (including a numeric literal) is
-			 *	interpreted as a namespace index. */
+			 *	interpreted as a namespace index.
+			 */
 			$index = intval( $param );
 
-			if( !MWNamespace::exists( $index ) ) {
+			if ( !MWNamespace::exists( $index ) ) {
 				throw new Scribunto_LuaError( wfMessage(
 						'dple-error-invalid-ns-index', $index )->text() );
 			}
@@ -167,7 +171,7 @@ class DpleFeatureBase {
 
 		$index = $wgContLang->getNsIndex( $param );
 
-		if( $index === false ) {
+		if ( $index === false ) {
 			return 0;
 		}
 
@@ -215,8 +219,9 @@ class DpleFeatureBase {
 	 */
 	public function parseUser( $param ) {
 		/** A numeric parameter (including a numeric literal) is
-		 *	interpreted as a user index. */
-		if( is_numeric( $param ) ) {
+		 *	interpreted as a user index.
+		 */
+		if ( is_numeric( $param ) ) {
 			return User::newFromId( intval( $param ) );
 		}
 
@@ -228,7 +233,7 @@ class DpleFeatureBase {
 	/**
 	 * @brief Modify a query.
 	 *
-	 * @param DpleQuery $query Query object.
+	 * @param DpleQuery &$query Query object.
 	 */
 	public function modifyQuery( DpleQuery &$query ) {
 	}

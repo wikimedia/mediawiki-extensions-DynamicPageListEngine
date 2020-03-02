@@ -40,7 +40,7 @@ implements DpleFeatureInterface {
 
 		/** Also select timestamp if at least one page is specified. */
 		if ( $this->getLinkedCount() ) {
-			$query->addVars( array( 'clx_timestamp' => 'clx1.cl_timestamp' ) );
+			$query->addVars( [ 'clx_timestamp' => 'clx1.cl_timestamp' ] );
 		}
 	}
 }

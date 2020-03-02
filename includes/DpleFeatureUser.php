@@ -38,29 +38,34 @@ implements DpleFeatureInterface {
 	/* == private variables == */
 
 	/** @brief Array of User objects for users that should have
-	 *	created the pages to select.*/
+	 *	created the pages to select.
+	 */
 	private $createdby_;
 
 	/** @brief Array of User objects for users that should not have
-	 *	created the pages to select.*/
+	 *	created the pages to select.
+	 */
 	private $notCreatedby_;
 
 	/** @brief Array of User objects for users that should have
-	 *	modified the pages to select.*/
+	 *	modified the pages to select.
+	 */
 	private $modifiedby_;
 
 	/** @brief Array of User objects for users that should not have
-	 *	modified the pages to select.*/
+	 *	modified the pages to select.
+	 */
 	private $notModifiedby_;
 
 	/** @brief Array of User objects for users that should be the
-	 *	users that have modified the pages to select.*/
+	 *	users that have modified the pages to select.
+	 */
 	private $lastmodifiedby_;
 
 	/** @brief Array of User objects for users that should not be the
-	 *	users that have modified the pages to select.*/
+	 *	users that have modified the pages to select.
+	 */
 	private $notLastmodifiedby_;
-
 
 	/* == magic methods == */
 
@@ -80,7 +85,7 @@ implements DpleFeatureInterface {
 
 			if ( isset( $params[$key] ) ) {
 				$this->$member =
-					array_map( array( $this, 'parseUser' ),
+					array_map( [ $this, 'parseUser' ],
 							   (array)$params[$key] );
 			}
 		}
@@ -134,12 +139,12 @@ implements DpleFeatureInterface {
 			? $wgDpleCondCostMap[$highCostKey]
 			: parent::getCost();
 
-		return ((int)(bool)$this->createdby_
+		return ( (int)(bool)$this->createdby_
 			+ (int)(bool)$this->notCreatedby_
 			+ (int)(bool)$this->lastmodifiedby_
-			+ (int)(bool)$this->notLastmodifiedby_) * parent::getCost()
-			+ ((int)(bool)$this->modifiedby_
-				+ (int)(bool)$this->notModifiedby_) * $highCost;
+			+ (int)(bool)$this->notLastmodifiedby_ ) * parent::getCost()
+			+ ( (int)(bool)$this->modifiedby_
+				+ (int)(bool)$this->notModifiedby_ ) * $highCost;
 	}
 
 	/* == operations == */

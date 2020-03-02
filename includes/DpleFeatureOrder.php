@@ -50,11 +50,12 @@ implements DpleFeatureInterface {
 		 * on other features; therefore, this parameter is just stored
 		 * in @ref $ordermethod_, and invocation of parseOrdermethod()
 		 * is deferred to modifyQuery(), when all features have been
-		 * constructed. */
+		 * constructed.
+		 */
 		$this->ordermethod_ = isset( $params['ordermethod'] )
 			? $params['ordermethod'] : null;
 
-		$this->sqlOrder_ = ($this->order_ == 'descending') ? 'DESC' : 'ASC';
+		$this->sqlOrder_ = ( $this->order_ == 'descending' ) ? 'DESC' : 'ASC';
 	}
 
 	/* == accessors == */
@@ -138,24 +139,28 @@ implements DpleFeatureInterface {
 
 			case 'categoryadd':
 				/** If no categories are specified, replace
-				 *	`categoryadd` with `created`. */
+				 *	`categoryadd` with `created`.
+				 */
 				return $hasCategories ? 'categoryadd' : 'created';
 
 			case 'categoryaddx':
 				/** If no categories are specified, replace
-				 *	`categoryaddx` with `created`. */
+				 *	`categoryaddx` with `created`.
+				 */
 				return $hasContains ? 'categoryaddx' : 'created';
 
 			case 'categorysortkey':
 			case 'sortkey':
 				/** If no categories are specified, replace
-				 *	`categorysortkey` with `created`. */
+				 *	`categorysortkey` with `created`.
+				 */
 				return $hasCategories ? 'categorysortkey' : 'created';
 
 			case 'categorysortkeyx':
 			case 'sortkeyx':
 				/** If no categories are specified, replace
-				 *	`categorysortkeyx` with `created`. */
+				 *	`categorysortkeyx` with `created`.
+				 */
 				return $hasContains ? 'categorysortkeyx' : 'created';
 
 			case 'popularity':
@@ -166,12 +171,14 @@ implements DpleFeatureInterface {
 				} else {
 					/** If `popularity` was requested but hit counters
 					 *	are disabled, invoke parseOrdermethod() again
-					 *	with parameter `categoryadd`. */
+					 *	with parameter `categoryadd`.
+					 */
 					return $this->parseOrdermethod( 'categoryadd' );
 				}
 
 				/** Default: invoke parseOrdermethod() again with
-				 *	parameter `categoryadd`. */
+				 *	parameter `categoryadd`.
+				 */
 			default:
 				return $this->parseOrdermethod( 'categoryadd' );
 		}

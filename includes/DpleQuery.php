@@ -138,7 +138,7 @@ class DpleQuery implements Countable {
 	 *
 	 * @param mixed $value Option value.
 	 */
-	public function setOption( $key, $value = NULL ) {
+	public function setOption( $key, $value = null ) {
 		if ( isset( $value ) ) {
 			$this->options_[$key] = $value;
 		} else {
@@ -151,7 +151,7 @@ class DpleQuery implements Countable {
 	 *
 	 * @param string $table Table name or alias.
 	 *
-	 * @param string $joinType. `INNER JOIN`, `LEFT OUTER JOIN` etc.
+	 * @param string $joinType `INNER JOIN`, `LEFT OUTER JOIN` etc.
 	 *
 	 * @param string|array $conds Join conditions.
 	 *
