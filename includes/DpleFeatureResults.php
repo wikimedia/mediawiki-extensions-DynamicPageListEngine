@@ -109,6 +109,7 @@ implements DpleFeatureInterface {
 	 * part after the second pipe character (`head of team` in the
 	 * example) as extra information.
 	 *
+	 * @param ResultWrapper $result
 	 * @return array Array of Title objects.
 	 */
 	public function toTitles( ResultWrapper $result ) {
@@ -214,6 +215,7 @@ implements DpleFeatureInterface {
 	 * languages like Lua where currently it is not possible to return
 	 * a Title object from php to the caller.
 	 *
+	 * @param ResultWrapper $result
 	 * @return array Array of arrays.
 	 */
 	public function toArrays( ResultWrapper $result ) {

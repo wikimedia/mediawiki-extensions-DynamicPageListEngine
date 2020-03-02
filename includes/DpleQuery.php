@@ -166,6 +166,7 @@ class DpleQuery implements Countable {
 	/**
 	 * @brief Execute the query and store the result in $result_.
 	 *
+	 * @param string $fname
 	 * @return ResultWrapper $result_.
 	 */
 	public function execute( $fname = __METHOD__ ) {
