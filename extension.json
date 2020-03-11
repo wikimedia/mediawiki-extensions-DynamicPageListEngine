@@ -41,9 +41,7 @@
 		"Scribunto_LuaDynamicPageListEngineLibrary": "includes/Scribunto_LuaDynamicPageListEngineLibrary.php"
 	},
 	"Hooks": {
-		"ScribuntoExternalLibraries": [
-			"Scribunto_LuaDynamicPageListEngineLibrary::onScribuntoExternalLibraries"
-		]
+		"ScribuntoExternalLibraries": "Scribunto_LuaDynamicPageListEngineLibrary::onScribuntoExternalLibraries"
 	},
 	"MessagesDirs": {
 		"DynamicPageListEngine": [
