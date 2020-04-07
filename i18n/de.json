@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"RV1971",
-			"Metalhead64"
+			"Metalhead64",
+			"RV1971"
 		]
 	},
 	"dynamicpagelistengine-desc": "Stellt dynamisch erzeugte Listen von Seiten zur Verfügung, die in [https://www.mediawiki.org/wiki/Extension:Scribunto Scribunto-Modulen] oder anderen Erweiterungen verwendet werden können. Die Auswahlkriterien sind konfigurierbar und erweiterbar.",
