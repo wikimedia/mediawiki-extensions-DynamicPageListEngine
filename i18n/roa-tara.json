@@ -4,7 +4,7 @@
 			"Joetaras"
 		]
 	},
-	"dynamicpagelistengine-desc": "Dèje l'elenghe de pàggene ccrejate dinamecamende in base a criterie de scacchiamende configurabbele e spandibbele; le elenghe ponne essere ausate da module ccrejate cu l'estenzione [https://www.mediawiki.org/wiki/Extension:Scribunto Scribunto] o da otre estenziune",
+	"dynamicpagelistengine-desc": "Dèje l'elenghe de pàggene ccrejate dinamecamende in base a criterie de scacchiamende configurabbele e spandibbele de le [[mw:Special:MyLanguage/Extension:Scribunto|module]] e a otre estenziune.",
 	"dple-tracking-category": "Pàggene ca ausane DynamicPageListEngine",
 	"dple-error-invalid-ns-index": "Errore de DynamicPageListEngine: Nisciune namespace cu l'indice $1.",
 	"dple-error-no-criteria": "Errore de DynamicPageListEngine: Nisciune criterie de scacchiamende specificate.",
