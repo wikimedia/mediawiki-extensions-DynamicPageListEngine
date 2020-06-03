@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
-	"dynamicpagelistengine-desc": "Забясьпечвае дынамічныя сьпісы старонак з функцыямі наладкі і пашырэньня для [https://www.mediawiki.org/wiki/Extension:Scribunto модуляў] і іншых пашырэньняў",
+	"dynamicpagelistengine-desc": "Забясьпечвае дынамічныя сьпісы старонак з функцыямі наладкі і пашырэньня для [[mw:Special:MyLanguage/Extension:Scribunto|модуляў]] і іншых пашырэньняў",
 	"dple-tracking-category": "Старонкі, якія ўжываюць рухавік дынамічных сьпісаў старонак",
 	"dple-error-invalid-ns-index": "Памылка рухавіка дынамічных сьпісаў старонак: няма прасторы назваў зь індэксам $1.",
 	"dple-error-no-criteria": "Памылка рухавіка дынамічных сьпісаў старонак: ня вызначаны крытэр выбару.",
