@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Evs"
+			"Evs",
+			"Megakott"
 		]
 	},
-	"dynamicpagelistengine-desc": "Предоставляет динамические списков страниц с настраиваемыми и расширяемыми функциями для [https://www.mediawiki.org/wiki/Extension:Scribunto модулей] и к другим расширениям",
+	"dynamicpagelistengine-desc": "Предоставляет динамические списков страниц с настраиваемыми и расширяемыми функциями для [[mw:Special:MyLanguage/Extension:Scribunto|модулей]] и к другим расширениям",
 	"dple-tracking-category": "Страницы, использующие DynamicPageListEngine",
 	"dple-error-invalid-ns-index": "Ошибка DynamicPageListEngine: нет пространства имён с индексом $1.",
 	"dple-error-no-criteria": "Ошибка DynamicPageListEngine: не указаны критерии выбора.",
