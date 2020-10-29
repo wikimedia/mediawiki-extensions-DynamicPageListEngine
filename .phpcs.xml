@@ -6,9 +6,13 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.ExtraParamComment" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingReturn" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingVar" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.WrongStyle" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
 		<exclude name="MediaWiki.Usage.AssignmentInReturn.AssignmentInReturn" />
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
+		<exclude name="PSR2.ControlStructures.SwitchDeclaration.TerminatingComment" />
 		<exclude name="Squiz.Classes.ValidClassName.NotCamelCaps" />
 	</rule>
 	<file>.</file>

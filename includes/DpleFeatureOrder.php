@@ -220,7 +220,7 @@ implements DpleFeatureInterface {
 				$sqlSort =
 					$query->getDbr()->strreplace( 'page_title',
 						"'_'", "' '" );
-					break;
+				break;
 
 			case 'categoryadd':
 				$sqlSort = 'cl1.cl_timestamp';
