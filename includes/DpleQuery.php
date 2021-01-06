@@ -170,8 +170,9 @@ class DpleQuery implements Countable {
 	 * @return ResultWrapper $result_.
 	 */
 	public function execute( $fname = __METHOD__ ) {
-		return $this->result_ = $this->dbr_->select(
+		$this->result_ = $this->dbr_->select(
 			$this->tables_, $this->vars_, $this->conds_, $fname,
 			$this->options_, $this->joinConds_ );
+		return $this->result_;
 	}
 }
