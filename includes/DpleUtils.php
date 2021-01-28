@@ -19,7 +19,11 @@
  * @ingroup Extensions-DynamicPageListEngine
  */
 class DpleUtils {
-	/// Convert a Title object to an array of properties
+	/**
+	 * Convert a Title object to an array of properties
+	 * @param Title $title
+	 * @return array
+	 */
 	public static function title2array( Title $title ) {
 		/** Extract all those Title properties which are cheap
 		 * (i.e. do not require database access):
@@ -52,23 +56,23 @@ class DpleUtils {
 	}
 
 	/**
-	 * @brief Get the target of a redirect page.
+	 * Get the target of a redirect page.
 	 *
 	 * @param Title|null $title Title of (potential) redirect page.
 	 *
-	 * @return null if $title is not a redirect or the target cannot be
+	 * @return array|null null if $title is not a redirect or the target cannot be
 	 * found. Otherwise an array of properties of the target page.
 	 */
 	public static function resolveRedirect( $title ) {
 		if ( !isset( $title ) || !$title->isRedirect() ) {
-			return;
+			return null;
 		}
 
 		$title = WikiPage::factory( $title )->getContent()
 			->getRedirectTarget();
 
 		if ( !isset( $title ) ) {
-			return;
+			return null;
 		}
 
 		return static::title2array( $title );
