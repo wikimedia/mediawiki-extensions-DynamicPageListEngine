@@ -56,7 +56,7 @@ class DpleUtils {
 	 *
 	 * @param Title|null $title Title of (potential) redirect page.
 	 *
-	 * @return NULL if $title is not a redirect or the target cannot be
+	 * @return null if $title is not a redirect or the target cannot be
 	 * found. Otherwise an array of properties of the target page.
 	 */
 	public static function resolveRedirect( $title ) {
