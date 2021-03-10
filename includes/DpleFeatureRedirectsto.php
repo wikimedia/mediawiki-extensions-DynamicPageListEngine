@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Selection by redirection to specified pages.
+ * Selection by redirection to specified pages.
  *
  * Recognizes the parameters `redirectsto` and `notredirectsto`. Each of them
  * may be a string or an array.
@@ -20,6 +20,10 @@
  */
 class DpleFeatureRedirectsto extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,
@@ -30,7 +34,12 @@ implements DpleFeatureInterface {
 			  '$table.rd_title = $dbkey' ] );
 	}
 
-	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	/**
+	 * Modify a given query.
+	 * @see DpleFeatureBase::modifyQuery()
+	 *
+	 * @param DpleQuery &$query
+	 */
 	public function modifyQuery( DpleQuery &$query ) {
 		parent::modifyQuery( $query );
 

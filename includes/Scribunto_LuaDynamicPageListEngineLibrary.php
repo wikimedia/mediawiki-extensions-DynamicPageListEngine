@@ -10,7 +10,6 @@
  */
 
 /**
- * @brief
  * [Scribunto](https://www.mediawiki.org/wiki/Extension:Scribunto) Lua
  * interface to DynamicPageListEngine.
  *
@@ -21,7 +20,7 @@ class Scribunto_LuaDynamicPageListEngineLibrary
 extends Scribunto_LuaLibraryBase {
 
 	/**
-	 * @brief [ScribuntoExternalLibraries]
+	 * [ScribuntoExternalLibraries]
 	 * (https://www.mediawiki.org/wiki/Extension:Scribunto/Lua_reference_manual#Library) hook.
 	 *
 	 * Register this library.
@@ -49,7 +48,7 @@ extends Scribunto_LuaLibraryBase {
 
 	/* == special functions == */
 
-	// Register this library.
+	/** Register this library. */
 	public function register() {
 		$lib = [
 			'getFullpagenames' => [ $this, 'getFullpagenames' ],
@@ -65,7 +64,7 @@ extends Scribunto_LuaLibraryBase {
 	/* == Functions to be called from Lua == */
 
 	/**
-	 * @brief Get an array of pages from the database.
+	 * Get an array of pages from the database.
 	 *
 	 * @param array $params Array of parameters.
 	 *
@@ -104,7 +103,7 @@ extends Scribunto_LuaLibraryBase {
 	}
 
 	/**
-	 * @brief Get an array of full page names from the database.
+	 * Get an array of full page names from the database.
 	 *
 	 * @param array $params Array of parameters.
 	 *
@@ -115,7 +114,7 @@ extends Scribunto_LuaLibraryBase {
 	}
 
 	/**
-	 * @brief Get an array of page names from the database.
+	 * Get an array of page names from the database.
 	 *
 	 * @param array $params Array of parameters.
 	 *

@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Include or exclude subpages.
+ * Include or exclude subpages.
  *
  * Recognizes the parameter `subpages`, which may be one of
  * `exclude|include|only`. Default is `exclude`, for consistency with
@@ -32,8 +32,13 @@
 class DpleFeatureSubpages extends DpleFeatureBase
 implements DpleFeatureInterface {
 
-	private $subpages_; // < include|only|exclude.
+	/** include|only|exclude. */
+	private $subpages_;
 
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -45,7 +50,12 @@ implements DpleFeatureInterface {
 		return $this->subpages_;
 	}
 
-	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	/**
+	 * Modify a given query.
+	 * @see DpleFeatureBase::modifyQuery()
+	 *
+	 * @param DpleQuery &$query
+	 */
 	public function modifyQuery( DpleQuery &$query ) {
 		$dbr = $query->getDbr();
 

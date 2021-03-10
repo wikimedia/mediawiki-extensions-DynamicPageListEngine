@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Utility functions.
+ * Utility functions.
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine

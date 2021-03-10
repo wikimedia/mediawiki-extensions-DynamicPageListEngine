@@ -10,16 +10,23 @@
  */
 
 /**
- * @brief Selection of pages used by specified pages.
+ * Selection of pages used by specified pages.
  *
- * Recognizes the parameters `usedby` and `notusedby`. Each of them
- * may be a string or an array. The results are the same as with [Extension:DynamicPageList (third-party)](https://www.mediawiki.org/wiki/Extension:DynamicPageList_(third-party%29).
+ * Recognizes the parameters `usedby` and `notusedby`.
+ * Each of them may be a string or an array.
+ *
+ * The results are the same as with
+ * [Extension:DynamicPageList (third-party)](https://www.mediawiki.org/wiki/Extension:DynamicPageList_(third-party%29).
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
 class DpleFeatureUsedby extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,

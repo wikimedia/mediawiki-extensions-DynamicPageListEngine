@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Selection by links from specified pages.
+ * Selection by links from specified pages.
  *
  * Recognizes the parameters `linksfrom` and `notlinksfrom`. Each of
  * them may be a string or an array. The names are chosen for
@@ -22,6 +22,10 @@
  */
 class DpleFeatureLinksfrom extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,

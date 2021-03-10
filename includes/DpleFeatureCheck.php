@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Check whether the whole specification is acceptable.
+ * Check whether the whole specification is acceptable.
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
@@ -19,10 +19,10 @@
 class DpleFeatureCheck extends DpleFeatureBase
 implements DpleFeatureInterface {
 
-	// Whether the global configuration has been initialized.
+	/** Whether the global configuration has been initialized. */
 	private static $intitialized_ = false;
 
-	// Initialize the global configuration.
+	/** Initialize the global configuration. */
 	public static function initConf() {
 		if ( self::$intitialized_ ) {
 			return;
@@ -57,8 +57,13 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	private $totalCost_; ///< Total cost of the query.
+	/** Total cost of the query. */
+	private $totalCost_;
 
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		/** Call initConf(). */
 		self::initConf();
@@ -73,7 +78,12 @@ implements DpleFeatureInterface {
 		return $this->totalCost_;
 	}
 
-	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	/**
+	 * Modify a given query.
+	 * @see DpleFeatureBase::modifyQuery()
+	 *
+	 * @param DpleQuery &$query
+	 */
 	public function modifyQuery( DpleQuery &$query ) {
 		global $wgDpleMaxCost;
 

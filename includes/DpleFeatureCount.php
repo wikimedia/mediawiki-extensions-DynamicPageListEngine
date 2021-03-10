@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Limit the number of records to fetch from the database.
+ * Limit the number of records to fetch from the database.
  *
  * Recognizes the parameter `count` which limits the number of records
  * to fetch. Invalid values (including 0) are interpreted as 1, for
@@ -25,10 +25,10 @@
 class DpleFeatureCount extends DpleFeatureBase
 implements DpleFeatureInterface {
 
-	// Whether the global configuration has been initialized.
+	/** Whether the global configuration has been initialized. */
 	private static $intitialized_ = false;
 
-	// Initialize the global configuration.
+	/** Initialize the global configuration. */
 	public static function initConf() {
 		if ( self::$intitialized_ ) {
 			return;
@@ -66,6 +66,10 @@ implements DpleFeatureInterface {
 	/** @var int Maxium number of records to fetch. */
 	private $count_;
 
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		self::initConf();
 
@@ -80,7 +84,7 @@ implements DpleFeatureInterface {
 	}
 
 	/**
-	 * @brief Parse a count specification.
+	 * Parse a count specification.
 	 *
 	 * @param int|string $param Parameter value.
 	 *
@@ -110,7 +114,12 @@ implements DpleFeatureInterface {
 		return $count;
 	}
 
-	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	/**
+	 * Modify a given query.
+	 * @see DpleFeatureBase::modifyQuery()
+	 *
+	 * @param DpleQuery &$query
+	 */
 	public function modifyQuery( DpleQuery &$query ) {
 		/** Set the LIMIT clause. */
 		$query->setOption( 'LIMIT', $this->count_ );

@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Selection of images by pages that contain them.
+ * Selection of images by pages that contain them.
  *
  * Recognizes the parameters `imagecontainer` and `notimagecontainer`. Each of
  * them may be a string or an array. The names are chosen for
@@ -22,6 +22,10 @@
  */
 class DpleFeatureImagecontainer extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,

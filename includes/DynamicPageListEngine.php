@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Dynamic page list backend.
+ * Dynamic page list backend.
  *
  * You can use this class as a data source for your own extensions.
  *
@@ -19,20 +19,20 @@
  */
 class DynamicPageListEngine implements Countable {
 
-	// Array of parameters given to the constructor.
+	/** Array of parameters given to the constructor. */
 	private $params_ = [];
 
-	// Array of objects derived from DpleFeature.
+	/** Array of objects derived from DpleFeature. */
 	private $features_ = [];
 
-	// Mapping of result converter functions to the feature classes they are defined in.
+	/** Mapping of result converter functions to the feature classes they are defined in. */
 	private $converters_ = [];
 
-	private $query_; // < DpleQuery object.
+	/** DpleQuery object */
+	private $query_;
 
 	/**
-	 * @brief Constructor. Evaluates parameters and fetches records
-	 * from the database.
+	 * Evaluates parameters and fetches records from the database.
 	 *
 	 * @param array $params Associative array of parameters.
 	 */
@@ -91,7 +91,8 @@ class DynamicPageListEngine implements Countable {
 		return $this->features_;
 	}
 
-	/** @brief Get a specific feature.
+	/**
+	 * Get a specific feature.
 	 *
 	 * @param string $class The feature class.
 	 *
@@ -113,7 +114,7 @@ class DynamicPageListEngine implements Countable {
 	}
 
 	/**
-	 * @brief Get the query result.
+	 * Get the query result.
 	 *
 	 * To access the ResultWrapper object without any conversion, use
 	 * getQuery()->getResult().

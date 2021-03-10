@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Selection by category.
+ * Selection by category.
  *
  * Recognizes the parameters `category` and `notcategory`. Each of
  * them may be a string or an array. If `category` is an array, the
@@ -21,7 +21,10 @@
  */
 class DpleFeatureCategory extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
-
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,
@@ -30,7 +33,12 @@ implements DpleFeatureInterface {
 			[ 'page_id = $table.cl_from', '$table.cl_to = $dbkey' ] );
 	}
 
-	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	/**
+	 * Modify a given query.
+	 * @see DpleFeatureBase::modifyQuery()
+	 *
+	 * @param DpleQuery &$query
+	 */
 	public function modifyQuery( DpleQuery &$query ) {
 		parent::modifyQuery( $query );
 

@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Include or exclude redirects.
+ * Include or exclude redirects.
  *
  * Recognizes the parameter `redirects`, which may be one of
  * `exclude|include|only`. Default is `exclude`, for compatibility
@@ -27,9 +27,16 @@
 class DpleFeatureRedirects extends DpleFeatureBase
 implements DpleFeatureInterface {
 
-	private $redirects_; // < include|only|exclude.
-	private $resolve_; // < Whether to resolve redirects.
+	/** include|only|exclude. */
+	private $redirects_;
 
+	/** Whether to resolve redirects. */
+	private $resolve_;
+
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -51,7 +58,12 @@ implements DpleFeatureInterface {
 		return $this->resolve_;
 	}
 
-	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	/**
+	 * Modify a given query.
+	 * @see DpleFeatureBase::modifyQuery()
+	 *
+	 * @param DpleQuery &$query
+	 */
 	public function modifyQuery( DpleQuery &$query ) {
 		switch ( $this->redirects_ ) {
 			case 'only':

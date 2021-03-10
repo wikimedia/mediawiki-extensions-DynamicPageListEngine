@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Selection by links to specified pages.
+ * Selection by links to specified pages.
  *
  * Recognizes the parameters `linksto` and `notlinksto`. Each of them
  * may be a string or an array. The result set differs from the result
@@ -23,6 +23,10 @@
  */
 class DpleFeatureLinksto extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,

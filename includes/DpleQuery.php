@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Database query specification and result.
+ * Database query specification and result.
  *
  * This class is simply a wrapper for the parameters and the result of
  * DatabaseBase::select().
@@ -20,16 +20,41 @@
  */
 class DpleQuery implements Countable {
 
-	private $dbr_; // < DatabaseBase object.
-	private $tables_; // < Tables for DatabaseBase::select().
-	private $vars_; // < Fields for DatabaseBase::select().
-	private $conds_; // < WHERE conditions for DatabaseBase::select().
-	private $options_; // < Options for DatabaseBase::select().
-	private $joinConds_; // < Join conditions for DatabaseBase::select().
-	private $result_; // < ResultWrapper containing the query result.
+	/** DatabaseBase object. */
+	private $dbr_;
 
-	public function __construct( $tables = null, $vars = null, $conds = null,
-		$options = null, $joinConds = null ) {
+	/** Tables for DatabaseBase::select(). */
+	private $tables_;
+
+	/** Fields for DatabaseBase::select(). */
+	private $vars_;
+
+	/** WHERE conditions for DatabaseBase::select(). */
+	private $conds_;
+
+	/** Options for DatabaseBase::select(). */
+	private $options_;
+
+	/** Join conditions for DatabaseBase::select(). */
+	private $joinConds_;
+
+	/** ResultWrapper containing the query result. */
+	private $result_;
+
+	/**
+	 * @param array|string|null $tables
+	 * @param array|string|null $vars
+	 * @param array|string|null $conds
+	 * @param array|string|null $options
+	 * @param array|string|null $joinConds
+	 */
+	public function __construct(
+		$tables = null,
+		$vars = null,
+		$conds = null,
+		$options = null,
+		$joinConds = null
+	) {
 		/** Get a database object. */
 		$this->dbr_ = wfGetDB( DB_REPLICA );
 
@@ -124,15 +149,13 @@ class DpleQuery implements Countable {
 	 * @param string $joinType `INNER JOIN`, `LEFT OUTER JOIN` etc.
 	 *
 	 * @param string|array $conds Join conditions.
-	 *
-	 * @param string|array $joinConds Additional JOIN conditions.
 	 */
 	public function addJoinCond( $table, $joinType, $conds ) {
 		$this->joinConds_[$table] = [ $joinType, $conds ];
 	}
 
 	/**
-	 * @brief Execute the query and store the result in $result_.
+	 * Execute the query and store the result in $result_.
 	 *
 	 * @param string $fname
 	 * @return ResultWrapper $result_.

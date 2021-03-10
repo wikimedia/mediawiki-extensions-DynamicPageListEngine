@@ -10,16 +10,23 @@
  */
 
 /**
- * @brief Selection of pages using specified pages.
+ * Selection of pages using specified pages.
  *
  * Recognizes the parameters `uses` and `notuses`. Each of them
- * may be a string or an array. The results are the same as with [Extension:DynamicPageList (third-party)](https://www.mediawiki.org/wiki/Extension:DynamicPageList_(third-party)).
+ * may be a string or an array.
+ *
+ * The results are the same as with
+ * [Extension:DynamicPageList (third-party)](https://www.mediawiki.org/wiki/Extension:DynamicPageList_(third-party)).
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  */
 class DpleFeatureUses extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,

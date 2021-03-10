@@ -10,7 +10,7 @@
  */
 
 /**
- * @brief Convert query results.
+ * Convert query results.
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
@@ -18,16 +18,31 @@
 class DpleFeatureResults extends DpleFeatureBase
 implements DpleFeatureInterface {
 
-	private $pagenames_; // < Array of page names.
-	private $fullpagenames_; // < Array of full page names.
-	private $titles_; // < Array of title objects.
-	private $arrays_; // < Array of associative arrays, each representing a page.
+	/** Array of page names. */
+	private $pagenames_;
 
+	/** Array of full page names. */
+	private $fullpagenames_;
+
+	/** Array of title objects. */
+	private $titles_;
+
+	/** Array of associative arrays, each representing a page. */
+	private $arrays_;
+
+	/**
+	 * @param array $params
+	 * @param array &$features
+	 */
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 	}
 
-	// @copydoc DpleFeatureBase::getResultConverters
+	/**
+	 * @see DpleFeatureBase::getResultConverters
+	 *
+	 * @return array
+	 */
 	public function getResultConverters() {
 		return [
 			'toPagenames',
@@ -38,7 +53,7 @@ implements DpleFeatureInterface {
 	}
 
 	/**
-	 * @brief Transform a query result to an array of page names.
+	 * Transform a query result to an array of page names.
 	 *
 	 * @param ResultWrapper $result Result of a query.
 	 *
@@ -61,7 +76,7 @@ implements DpleFeatureInterface {
 	}
 
 	/**
-	 * @brief Transform a query result to an array of full page names.
+	 * Transform a query result to an array of full page names.
 	 *
 	 * @param ResultWrapper $result Result of a query.
 	 *
@@ -88,7 +103,7 @@ implements DpleFeatureInterface {
 	}
 
 	/**
-	 * @brief Transform a query result to an array of Title objects.
+	 * Transform a query result to an array of Title objects.
 	 *
 	 * In category tags, you can add *extra information* in the sort
 	 * key, e.g. in constructs like
@@ -197,7 +212,7 @@ implements DpleFeatureInterface {
 	}
 
 	/**
-	 * @brief Transform a query result to an array of associative arrays.
+	 * Transform a query result to an array of associative arrays.
 	 *
 	 * Useful for
 	 * [Extension:Scribunto](https://www.mediawiki.org/wiki/Extension:Scribunto)
