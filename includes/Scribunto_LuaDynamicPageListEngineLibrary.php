@@ -58,7 +58,7 @@ extends Scribunto_LuaLibraryBase {
 
 	/* == special functions == */
 
-	/// Register this library.
+	// Register this library.
 	public function register() {
 		$lib = [
 			'getFullpagenames' => [ $this, 'getFullpagenames' ],

@@ -24,17 +24,17 @@
 class DpleQuery implements Countable {
 	/* == private data members == */
 
-	private $dbr_; ///< DatabaseBase object.
-	private $tables_; ///< Tables for DatabaseBase::select().
-	private $vars_; ///< Fields for DatabaseBase::select().
-	private $conds_; ///< WHERE conditions for DatabaseBase::select().
-	private $options_; ///< Options for DatabaseBase::select().
-	private $joinConds_; ///< Join conditions for DatabaseBase::select().
-	private $result_; ///< ResultWrapper containing the query result.
+	private $dbr_; // < DatabaseBase object.
+	private $tables_; // < Tables for DatabaseBase::select().
+	private $vars_; // < Fields for DatabaseBase::select().
+	private $conds_; // < WHERE conditions for DatabaseBase::select().
+	private $options_; // < Options for DatabaseBase::select().
+	private $joinConds_; // < Join conditions for DatabaseBase::select().
+	private $result_; // < ResultWrapper containing the query result.
 
 	/* == magic methods == */
 
-	/// Constructor.
+	// Constructor.
 	public function __construct( $tables = null, $vars = null, $conds = null,
 		$options = null, $joinConds = null ) {
 		/** Get a database object. */
@@ -65,37 +65,37 @@ class DpleQuery implements Countable {
 
 	/* == accessors == */
 
-	/// Get @ref $dbr_.
+	// Get @ref $dbr_.
 	public function getDbr() {
 		return $this->dbr_;
 	}
 
-	/// Get @ref $tables_.
+	// Get @ref $tables_.
 	public function getTables() {
 		return $this->tables_;
 	}
 
-	/// Get @ref $vars_.
+	// Get @ref $vars_.
 	public function getVars() {
 		return $this->vars_;
 	}
 
-	/// Get @ref $conds_.
+	// Get @ref $conds_.
 	public function getConds() {
 		return $this->conds_;
 	}
 
-	/// Get @ref $options_.
+	// Get @ref $options_.
 	public function getOptions() {
 		return $this->options_;
 	}
 
-	/// Get @ref $joinConds_.
+	// Get @ref $joinConds_.
 	public function getJoinConds() {
 		return $this->joinConds_;
 	}
 
-	/// Get @ref $result_.
+	// Get @ref $result_.
 	public function getResult() {
 		return $this->result_;
 	}

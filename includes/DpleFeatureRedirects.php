@@ -31,12 +31,12 @@ class DpleFeatureRedirects extends DpleFeatureBase
 implements DpleFeatureInterface {
 	/* == private variables == */
 
-	private $redirects_; ///< include|only|exclude.
-	private $resolve_; ///< Whether to resolve redirects.
+	private $redirects_; // < include|only|exclude.
+	private $resolve_; // < Whether to resolve redirects.
 
 	/* == magic methods == */
 
-	/// Constructor. Evaluate parameters.
+	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -52,19 +52,19 @@ implements DpleFeatureInterface {
 
 	/* == accessors == */
 
-	/// Get @ref $redirects_.
+	// Get @ref $redirects_.
 	public function getRedirects() {
 		return $this->redirects_;
 	}
 
-	/// Get @ref $resolve_.
+	// Get @ref $resolve_.
 	public function ifResolve() {
 		return $this->resolve_;
 	}
 
 	/* == operations == */
 
-	/// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {
 		switch ( $this->redirects_ ) {
 			case 'only':

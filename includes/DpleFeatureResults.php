@@ -22,21 +22,21 @@ class DpleFeatureResults extends DpleFeatureBase
 implements DpleFeatureInterface {
 	/* == private data members == */
 
-	private $pagenames_; ///< Array of page names.
-	private $fullpagenames_; ///< Array of full page names.
-	private $titles_; ///< Array of title objects.
-	private $arrays_; ///< Array of associative arrays, each representing a page.
+	private $pagenames_; // < Array of page names.
+	private $fullpagenames_; // < Array of full page names.
+	private $titles_; // < Array of title objects.
+	private $arrays_; // < Array of associative arrays, each representing a page.
 
 	/* == magic methods == */
 
-	/// Constructor. Evaluate parameters.
+	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 	}
 
 	/* == accessors == */
 
-	/// @copydoc DpleFeatureBase::getResultConverters
+	// @copydoc DpleFeatureBase::getResultConverters
 	public function getResultConverters() {
 		return [
 			'toPagenames',

@@ -23,16 +23,16 @@
 class DynamicPageListEngine implements Countable {
 	/* == private data members == */
 
-	/// Array of parameters given to the constructor.
+	// Array of parameters given to the constructor.
 	private $params_ = [];
 
-	/// Array of objects derived from DpleFeature.
+	// Array of objects derived from DpleFeature.
 	private $features_ = [];
 
-	/// Mapping of result converter functions to the feature classes they are defined in.
+	// Mapping of result converter functions to the feature classes they are defined in.
 	private $converters_ = [];
 
-	private $query_; ///< DpleQuery object.
+	private $query_; // < DpleQuery object.
 
 	/* == magic methods == */
 
@@ -98,7 +98,7 @@ class DynamicPageListEngine implements Countable {
 
 	/* == accessors == */
 
-	/// Get @ref $features_.
+	// Get @ref $features_.
 	public function &getFeatures() {
 		return $this->features_;
 	}
@@ -120,7 +120,7 @@ class DynamicPageListEngine implements Countable {
 		}
 	}
 
-	/// Get @ref $query_.
+	// Get @ref $query_.
 	public function getQuery() {
 		return $this->query_;
 	}

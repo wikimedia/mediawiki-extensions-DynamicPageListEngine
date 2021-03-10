@@ -26,7 +26,7 @@ class DpleFeatureCategory extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
 	/* == magic methods == */
 
-	/// Constructor. Evaluate parameters.
+	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,
@@ -37,7 +37,7 @@ implements DpleFeatureInterface {
 
 	/* == operations == */
 
-	/// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {
 		parent::modifyQuery( $query );
 

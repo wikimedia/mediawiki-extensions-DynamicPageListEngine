@@ -49,7 +49,7 @@ class DpleFeatureBase {
 		$this->features_ = &$features;
 	}
 
-	/// Get @ref $features_.
+	// Get @ref $features_.
 	public function &getFeatures() {
 		return $this->features_;
 	}

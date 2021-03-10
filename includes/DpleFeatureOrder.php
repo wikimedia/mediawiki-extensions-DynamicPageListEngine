@@ -33,13 +33,13 @@ class DpleFeatureOrder extends DpleFeatureBase
 implements DpleFeatureInterface {
 	/* == private variables == */
 
-	private $order_; ///< ascending|descending.
-	private $ordermethod_; ///< Sorting criteria.
-	private $sqlOrder_; ///< ASC|DESC.
+	private $order_; // < ascending|descending.
+	private $ordermethod_; // < Sorting criteria.
+	private $sqlOrder_; // < ASC|DESC.
 
 	/* == magic methods == */
 
-	/// Constructor. Evaluate parameters.
+	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -60,17 +60,17 @@ implements DpleFeatureInterface {
 
 	/* == accessors == */
 
-	/// Get @ref $order_.
+	// Get @ref $order_.
 	public function getOrder() {
 		return $this->order_;
 	}
 
-	/// Get @ref $ordermethod_.
+	// Get @ref $ordermethod_.
 	public function getOrdermethod() {
 		return $this->ordermethod_;
 	}
 
-	/// Get @ref $sqlOrder_.
+	// Get @ref $sqlOrder_.
 	public function getSqlOrder() {
 		return $this->sqlOrder_;
 	}
@@ -184,7 +184,7 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	/// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {
 		/** Call parseOrdermethod(). */
 		$this->ordermethod_ = $this->parseOrdermethod( $this->ordermethod_ );

@@ -23,7 +23,7 @@
  */
 class DpleFeatureUses extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
-	/// Constructor. Evaluate parameters.
+	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,

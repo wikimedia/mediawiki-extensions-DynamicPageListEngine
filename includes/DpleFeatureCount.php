@@ -29,12 +29,12 @@ class DpleFeatureCount extends DpleFeatureBase
 implements DpleFeatureInterface {
 	/* == private static variables == */
 
-	/// Whether the global configuration has been initialized.
+	// Whether the global configuration has been initialized.
 	private static $intitialized_ = false;
 
 	/* == public static methods == */
 
-	/// Initialize the global configuration.
+	// Initialize the global configuration.
 	public static function initConf() {
 		if ( self::$intitialized_ ) {
 			return;
@@ -75,7 +75,7 @@ implements DpleFeatureInterface {
 
 	/* == magic methods == */
 
-	/// Constructor. Evaluate parameters.
+	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		self::initConf();
 
@@ -87,7 +87,7 @@ implements DpleFeatureInterface {
 
 	/* == accessors == */
 
-	/// Get @ref $count_.
+	// Get @ref $count_.
 	public function getCount() {
 		return $this->count_;
 	}
@@ -125,7 +125,7 @@ implements DpleFeatureInterface {
 		return $count;
 	}
 
-	/// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
+	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {
 		/** Set the LIMIT clause. */
 		$query->setOption( 'LIMIT', $this->count_ );
