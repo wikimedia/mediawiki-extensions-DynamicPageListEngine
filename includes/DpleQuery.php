@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleQuery.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -22,7 +19,6 @@
  * @ingroup Extensions-DynamicPageListEngine
  */
 class DpleQuery implements Countable {
-	/* == private data members == */
 
 	private $dbr_; // < DatabaseBase object.
 	private $tables_; // < Tables for DatabaseBase::select().
@@ -32,9 +28,6 @@ class DpleQuery implements Countable {
 	private $joinConds_; // < Join conditions for DatabaseBase::select().
 	private $result_; // < ResultWrapper containing the query result.
 
-	/* == magic methods == */
-
-	// Constructor.
 	public function __construct( $tables = null, $vars = null, $conds = null,
 		$options = null, $joinConds = null ) {
 		/** Get a database object. */
@@ -50,8 +43,6 @@ class DpleQuery implements Countable {
 	}
 
 	/**
-	 * @brief Implementation of Countable::count.
-	 *
 	 * @return int Number of result rows, or 0 if the query has not
 	 * yet been executed.
 	 */
@@ -63,48 +54,35 @@ class DpleQuery implements Countable {
 		}
 	}
 
-	/* == accessors == */
-
-	// Get @ref $dbr_.
 	public function getDbr() {
 		return $this->dbr_;
 	}
 
-	// Get @ref $tables_.
 	public function getTables() {
 		return $this->tables_;
 	}
 
-	// Get @ref $vars_.
 	public function getVars() {
 		return $this->vars_;
 	}
 
-	// Get @ref $conds_.
 	public function getConds() {
 		return $this->conds_;
 	}
 
-	// Get @ref $options_.
 	public function getOptions() {
 		return $this->options_;
 	}
 
-	// Get @ref $joinConds_.
 	public function getJoinConds() {
 		return $this->joinConds_;
 	}
 
-	// Get @ref $result_.
 	public function getResult() {
 		return $this->result_;
 	}
 
-	/* == mutators == */
-
 	/**
-	 * @brief Add to @ref $tables_.
-	 *
 	 * @param string|array $tables Additional tables to query.
 	 */
 	public function addTables( $tables ) {
@@ -112,8 +90,6 @@ class DpleQuery implements Countable {
 	}
 
 	/**
-	 * @brief Add to @ref $vars_.
-	 *
 	 * @param string|array $vars Additional fields to query.
 	 */
 	public function addVars( $vars ) {
@@ -121,8 +97,6 @@ class DpleQuery implements Countable {
 	}
 
 	/**
-	 * @brief Add to @ref $conds_.
-	 *
 	 * @param string|array $conds Additional WHERE conditions.
 	 */
 	public function addConds( $conds ) {
@@ -130,8 +104,6 @@ class DpleQuery implements Countable {
 	}
 
 	/**
-	 * @brief Set an option in $_option.
-	 *
 	 * @param string $key Option key. To set options which do not have
 	 * keys (such as DISTINCT), pass the option as $key and do not
 	 * pass $value.
@@ -147,8 +119,6 @@ class DpleQuery implements Countable {
 	}
 
 	/**
-	 * @brief Add to @ref $joinConds_.
-	 *
 	 * @param string $table Table name or alias.
 	 *
 	 * @param string $joinType `INNER JOIN`, `LEFT OUTER JOIN` etc.
@@ -160,8 +130,6 @@ class DpleQuery implements Countable {
 	public function addJoinCond( $table, $joinType, $conds ) {
 		$this->joinConds_[$table] = [ $joinType, $conds ];
 	}
-
-	/* == operations == */
 
 	/**
 	 * @brief Execute the query and store the result in $result_.

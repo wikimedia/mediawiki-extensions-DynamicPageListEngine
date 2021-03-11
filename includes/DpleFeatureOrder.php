@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureOrder.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -31,15 +28,11 @@
  */
 class DpleFeatureOrder extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private variables == */
 
 	private $order_; // < ascending|descending.
 	private $ordermethod_; // < Sorting criteria.
 	private $sqlOrder_; // < ASC|DESC.
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -58,19 +51,14 @@ implements DpleFeatureInterface {
 		$this->sqlOrder_ = ( $this->order_ == 'descending' ) ? 'DESC' : 'ASC';
 	}
 
-	/* == accessors == */
-
-	// Get @ref $order_.
 	public function getOrder() {
 		return $this->order_;
 	}
 
-	// Get @ref $ordermethod_.
 	public function getOrdermethod() {
 		return $this->ordermethod_;
 	}
 
-	// Get @ref $sqlOrder_.
 	public function getSqlOrder() {
 		return $this->sqlOrder_;
 	}
@@ -90,8 +78,6 @@ implements DpleFeatureInterface {
 			? $wgDpleOrderCostMap[$this->ordermethod_]
 			: 0;
 	}
-
-	/* == operations == */
 
 	/**
 	 * @brief Parse the `order` parameter.

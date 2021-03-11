@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureTitlematch.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -35,7 +32,6 @@
  */
 class DpleFeatureTitlematch extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private variables == */
 
 	// Array of title prefixes pages to select should have.
 	private $titleprefixes_;
@@ -55,9 +51,6 @@ implements DpleFeatureInterface {
 	// Array of strings that titles of pages to select should not contain.
 	private $notTitlecontains_;
 
-	/* == magic methods == */
-
-	/// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -79,34 +72,26 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	/* == accessors == */
-
-	// Get @ref $titleprefixes_.
 	public function getTitleprefixes() {
 		return $this->titleprefixes_;
 	}
 
-	// Get @ref $notTitleprefixes_.
 	public function getNotTitleprefixes() {
 		return $this->notTitleprefixes_;
 	}
 
-	// Get @ref $titlesuffixes_.
 	public function getTitlesuffixes() {
 		return $this->titlesuffixes_;
 	}
 
-	// Get @ref $notTitlesuffixes_.
 	public function getNotTitlesuffixes() {
 		return $this->notTitlesuffixes_;
 	}
 
-	// Get @ref $titlecontains_.
 	public function getTitlecontains() {
 		return $this->titlecontains_;
 	}
 
-	// Get @ref $notTitlecontains_.
 	public function getNotTitlecontains() {
 		return $this->notTitlecontains_;
 	}
@@ -130,8 +115,6 @@ implements DpleFeatureInterface {
 			+ (int)(bool)$this->notTitlesuffixes_
 			+ (int)(bool)$this->notTitlecontains_ ) * parent::getCost();
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

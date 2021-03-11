@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleUtils.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**

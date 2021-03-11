@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureRedirectsto.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -23,7 +20,6 @@
  */
 class DpleFeatureRedirectsto extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,
@@ -33,8 +29,6 @@ implements DpleFeatureInterface {
 			  '$table.rd_namespace = $ns',
 			  '$table.rd_title = $dbkey' ] );
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

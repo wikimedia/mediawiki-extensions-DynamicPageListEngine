@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeature.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -22,7 +19,6 @@
  * @ingroup Extensions-DynamicPageListEngine
  */
 class DpleFeatureBase {
-	/* == private variables == */
 
 	/**
 	 * @brief Array of feature objects constructed so far.
@@ -33,11 +29,7 @@ class DpleFeatureBase {
 	 */
 	private $features_;
 
-	/* == magic methods == */
-
 	/**
-	 * @brief Constructor.
-	 *
 	 * @param array &$features Array of feature objects constructed so
 	 * far.
 	 */
@@ -49,7 +41,6 @@ class DpleFeatureBase {
 		$this->features_ = &$features;
 	}
 
-	// Get @ref $features_.
 	public function &getFeatures() {
 		return $this->features_;
 	}
@@ -227,8 +218,6 @@ class DpleFeatureBase {
 
 		return User::newFromName( $param );
 	}
-
-	/* == operations == */
 
 	/**
 	 * @brief Modify a query.

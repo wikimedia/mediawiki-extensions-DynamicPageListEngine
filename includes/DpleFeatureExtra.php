@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureExtra.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -32,7 +29,6 @@
  */
 class DpleFeatureExtra extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private variables == */
 
 	/** @brief Extra information pages to select should provide with
 	 * the category tag for the first category.
@@ -44,9 +40,6 @@ implements DpleFeatureInterface {
 	 */
 	private $notExtras_;
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -61,14 +54,10 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	/* == accessors == */
-
-	// Get @ref $extras_.
 	public function getExtras() {
 		return $this->extras_;
 	}
 
-	// Get @ref $notExtras_.
 	public function getNotExtras() {
 		return $this->notExtras_;
 	}
@@ -86,8 +75,6 @@ implements DpleFeatureInterface {
 		return ( count( $this->extras_ ) + (int)(bool)$this->notExtras_ )
 			* parent::getCost();
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

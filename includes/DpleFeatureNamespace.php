@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureNamespace.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -30,7 +27,6 @@
  */
 class DpleFeatureNamespace extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private variables == */
 
 	/** @brief Array of [Namespace]
 	 * (https://www.mediawiki.org/wiki/Help:Namespace) indexes to
@@ -44,9 +40,6 @@ implements DpleFeatureInterface {
 	 */
 	private $notNamespaces_;
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -63,14 +56,10 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	/* == accessors == */
-
-	// Get @ref $namespaces_.
 	public function getNamespaces() {
 		return $this->namespaces_;
 	}
 
-	// Get @ref $notNamespaces_.
 	public function getNotNamespaces() {
 		return $this->notNamespaces_;
 	}
@@ -81,8 +70,6 @@ implements DpleFeatureInterface {
 			|| isset( $this->notNamespaces_ )
 			? parent::getCost() : 0;
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

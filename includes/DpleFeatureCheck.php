@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureCheck.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -21,12 +18,9 @@
 
 class DpleFeatureCheck extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private static variables == */
 
 	// Whether the global configuration has been initialized.
 	private static $intitialized_ = false;
-
-	/* == public static methods == */
 
 	// Initialize the global configuration.
 	public static function initConf() {
@@ -63,13 +57,8 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	/* == private data members == */
-
 	private $totalCost_; ///< Total cost of the query.
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		/** Call initConf(). */
 		self::initConf();
@@ -77,18 +66,12 @@ implements DpleFeatureInterface {
 		parent::__construct( $features );
 	}
 
-	/* == accessors == */
-
 	/**
-	 * @brief Get @ref $totalCost_.
-	 *
 	 * Supplies a value only after invocation of modifyQuery().
 	 */
 	public function getTotalCost() {
 		return $this->totalCost_;
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Interface DpleFeatureInterface.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -24,8 +21,6 @@
  */
 interface DpleFeatureInterface {
 	/**
-	 * @brief Constructor.
-	 *
 	 * @param array $params Array of parameters.
 	 *
 	 * @param array &$features Array of feature objects constructed so

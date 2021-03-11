@@ -1,8 +1,6 @@
 <?php
 
 /**
- * @brief Class DpleFeatureUser.
- *
  * @file
  *
  * @ingroup Extensions
@@ -35,7 +33,6 @@
  */
 class DpleFeatureUser extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private variables == */
 
 	/** @brief Array of User objects for users that should have
 	 *	created the pages to select.
@@ -67,9 +64,6 @@ implements DpleFeatureInterface {
 	 */
 	private $notLastmodifiedby_;
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -91,34 +85,26 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	/* == accessors == */
-
-	// Get @ref $createdby_.
 	public function getCreatedby() {
 		return $this->createdby_;
 	}
 
-	// Get @ref $notCreatedby_.
 	public function getNotCreatedby() {
 		return $this->notCreatedby_;
 	}
 
-	// Get @ref $modifiedby_.
 	public function getModifiedby() {
 		return $this->modifiedby_;
 	}
 
-	// Get @ref $notModifiedby_.
 	public function getNotModifiedby() {
 		return $this->notModifiedby_;
 	}
 
-	// Get @ref $lastmodifiedby_.
 	public function getLastmodifiedby() {
 		return $this->lastmodifiedby_;
 	}
 
-	// Get @ref $notLastmodifiedby_.
 	public function getNotLastmodifiedby() {
 		return $this->notLastmodifiedby_;
 	}
@@ -146,8 +132,6 @@ implements DpleFeatureInterface {
 			+ ( (int)(bool)$this->modifiedby_
 				+ (int)(bool)$this->notModifiedby_ ) * $highCost;
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

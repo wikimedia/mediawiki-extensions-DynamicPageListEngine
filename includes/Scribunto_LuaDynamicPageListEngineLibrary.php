@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class LuaDynamicPageListEngineLibrary.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -22,8 +19,6 @@
  */
 class Scribunto_LuaDynamicPageListEngineLibrary
 extends Scribunto_LuaLibraryBase {
-
-	/* == static methods == */
 
 	/**
 	 * @brief [ScribuntoExternalLibraries]
@@ -45,11 +40,7 @@ extends Scribunto_LuaLibraryBase {
 		return true;
 	}
 
-	/* == magic methods == */
-
 	/**
-	 * @brief Constructor.
-	 *
 	 * @param Scribunto_LuaEngine $engine Scribunto engine.
 	 */
 	public function __construct( $engine ) {

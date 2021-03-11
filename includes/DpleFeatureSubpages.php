@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureSubpages.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -34,13 +31,9 @@
  */
 class DpleFeatureSubpages extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private variables == */
 
 	private $subpages_; // < include|only|exclude.
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -48,14 +41,9 @@ implements DpleFeatureInterface {
 			isset( $params['subpages'] ) ? $params['subpages'] : null );
 	}
 
-	/* == accessors == */
-
-	// Get @ref $subpages_.
 	public function getSubpages() {
 		return $this->subpages_;
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

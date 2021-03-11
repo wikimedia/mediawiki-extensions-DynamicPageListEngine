@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureRedirects.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -29,14 +26,10 @@
  */
 class DpleFeatureRedirects extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private variables == */
 
 	private $redirects_; // < include|only|exclude.
 	private $resolve_; // < Whether to resolve redirects.
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 
@@ -50,19 +43,13 @@ implements DpleFeatureInterface {
 			isset( $params['redirects'] ) ? $params['redirects'] : null );
 	}
 
-	/* == accessors == */
-
-	// Get @ref $redirects_.
 	public function getRedirects() {
 		return $this->redirects_;
 	}
 
-	// Get @ref $resolve_.
 	public function ifResolve() {
 		return $this->resolve_;
 	}
-
-	/* == operations == */
 
 	// Modify a given query. @copydetails DpleFeatureBase::modifyQuery()
 	public function modifyQuery( DpleQuery &$query ) {

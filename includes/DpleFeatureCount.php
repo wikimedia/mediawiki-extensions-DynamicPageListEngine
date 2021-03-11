@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureCount.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -27,12 +24,9 @@
  */
 class DpleFeatureCount extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private static variables == */
 
 	// Whether the global configuration has been initialized.
 	private static $intitialized_ = false;
-
-	/* == public static methods == */
 
 	// Initialize the global configuration.
 	public static function initConf() {
@@ -69,13 +63,9 @@ implements DpleFeatureInterface {
 		}
 	}
 
-	/* == private variables == */
+	/** @var int Maxium number of records to fetch. */
+	private $count_;
 
-	private $count_; /** < @brief Maxium number of records to fetch. */
-
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		self::initConf();
 
@@ -85,14 +75,9 @@ implements DpleFeatureInterface {
 			? $params['count'] : null );
 	}
 
-	/* == accessors == */
-
-	// Get @ref $count_.
 	public function getCount() {
 		return $this->count_;
 	}
-
-	/* == operations == */
 
 	/**
 	 * @brief Parse a count specification.

@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureResults.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -20,21 +17,15 @@
  */
 class DpleFeatureResults extends DpleFeatureBase
 implements DpleFeatureInterface {
-	/* == private data members == */
 
 	private $pagenames_; // < Array of page names.
 	private $fullpagenames_; // < Array of full page names.
 	private $titles_; // < Array of title objects.
 	private $arrays_; // < Array of associative arrays, each representing a page.
 
-	/* == magic methods == */
-
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct( $features );
 	}
-
-	/* == accessors == */
 
 	// @copydoc DpleFeatureBase::getResultConverters
 	public function getResultConverters() {
@@ -45,8 +36,6 @@ implements DpleFeatureInterface {
 			'toArrays',
 			];
 	}
-
-	/* == operations == */
 
 	/**
 	 * @brief Transform a query result to an array of page names.

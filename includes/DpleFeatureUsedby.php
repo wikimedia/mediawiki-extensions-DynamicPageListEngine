@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DpleFeatureUsedby.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -23,7 +20,6 @@
  */
 class DpleFeatureUsedby extends DpleFeatureLinksBase
 implements DpleFeatureInterface {
-	// Constructor. Evaluate parameters.
 	public function __construct( array $params, array &$features ) {
 		parent::__construct(
 			$params, $features,

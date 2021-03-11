@@ -1,15 +1,12 @@
 <?php
 
 /**
- * @brief Class DynamicPageListEngine.
- *
  * @file
  *
  * @ingroup Extensions
  * @ingroup Extensions-DynamicPageListEngine
  *
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
- *
  */
 
 /**
@@ -21,7 +18,6 @@
  * @ingroup Extensions-DynamicPageListEngine
  */
 class DynamicPageListEngine implements Countable {
-	/* == private data members == */
 
 	// Array of parameters given to the constructor.
 	private $params_ = [];
@@ -33,8 +29,6 @@ class DynamicPageListEngine implements Countable {
 	private $converters_ = [];
 
 	private $query_; // < DpleQuery object.
-
-	/* == magic methods == */
 
 	/**
 	 * @brief Constructor. Evaluates parameters and fetches records
@@ -66,7 +60,6 @@ class DynamicPageListEngine implements Countable {
 			}
 		}
 
-		/** Construct the query. */
 		$this->query_ = new DpleQuery(
 			'page',
 			[ 'page_namespace', 'page_title', 'page_is_redirect', 'page_len' ] );
@@ -87,18 +80,13 @@ class DynamicPageListEngine implements Countable {
 	}
 
 	/**
-	 * @brief Implementation of Countable::count.
-	 *
-	 * return int Number of result rows, or 0 if the query has not
+	 * @return int Number of result rows, or 0 if the query has not
 	 * yet been executed.
 	 */
 	public function count() {
 		return count( $this->query_ );
 	}
 
-	/* == accessors == */
-
-	// Get @ref $features_.
 	public function &getFeatures() {
 		return $this->features_;
 	}
@@ -120,7 +108,6 @@ class DynamicPageListEngine implements Countable {
 		}
 	}
 
-	// Get @ref $query_.
 	public function getQuery() {
 		return $this->query_;
 	}

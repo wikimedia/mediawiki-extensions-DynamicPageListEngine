@@ -1,8 +1,6 @@
 <?php
 
 /**
- * @brief Class DpleFeatureLinksBase.
- *
  * @file
  *
  * @ingroup Extensions
@@ -21,7 +19,6 @@
  * @ingroup Extensions-DynamicPageListEngine
  */
 class DpleFeatureLinksBase extends DpleFeatureBase {
-	/* == private variables == */
 
 	private $paramName_; // < Name of the parameter to recognize.
 
@@ -44,11 +41,7 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 
 	private $notLinkedCount_ = 0; // < count( $notLinkedCount_ ).
 
-	/* == magic methods == */
-
 	/**
-	 * @brief Constructor. Evaluate parameters.
-	 *
 	 * @param array $params Array of parameters.
 	 *
 	 * @param array &$features Array of feature objects constructed so
@@ -95,44 +88,34 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 		}
 	}
 
-	/* == accessors == */
-
-	// Get @ref $paramName_.
 	public function getParamName() {
 		return $this->paramName_;
 	}
 
-	// Get @ref $tableName_.
 	public function getTableName() {
 		return $this->tableName_;
 	}
 
-	// Get @ref $tableAlias_.
 	public function getTableAlias() {
 		return $this->tableAlias_;
 	}
 
-	// Get @ref $tableColumn_.
 	public function getTableColumn() {
 		return $this->tableColumn_;
 	}
 
-	// Get @ref $linkedTitles_.
 	public function getLinkedTitles() {
 		return $this->linkedTitles_;
 	}
 
-	// Get @ref $linkedCount_.
 	public function getLinkedCount() {
 		return $this->linkedCount_;
 	}
 
-	// Get @ref $notLinkedTitles_.
 	public function getNotLinkedTitles() {
 		return $this->notLinkedTitles_;
 	}
 
-	// Get @ref $notLinkedCount_.
 	public function getNotLinkedCount() {
 		return $this->notLinkedCount_;
 	}
@@ -142,8 +125,6 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 		return ( $this->linkedCount_ + $this->notLinkedCount_ )
 			* parent::getCost();
 	}
-
-	/* == operations == */
 
 	/**
 	 * @brief Modify a given query.
@@ -186,8 +167,6 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 			$n++;
 		}
 	}
-
-	/* == private methods == */
 
 	/**
 	 * @brief Replace strings in an array of join conditions.
