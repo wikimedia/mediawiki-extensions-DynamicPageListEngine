@@ -9,6 +9,8 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Base class from which feature classes should be derived.
  *
@@ -157,9 +159,7 @@ class DpleFeatureBase {
 			return $index;
 		}
 
-		global $wgContLang;
-
-		$index = $wgContLang->getNsIndex( $param );
+		$index = MediaWikiServices::getInstance()->getContentLanguage()->getNsIndex( $param );
 
 		if ( $index === false ) {
 			return 0;

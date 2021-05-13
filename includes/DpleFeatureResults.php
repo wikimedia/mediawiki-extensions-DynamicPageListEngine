@@ -9,6 +9,8 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Convert query results.
  *
@@ -91,11 +93,11 @@ implements DpleFeatureInterface {
 		/** Otherwise create it from $result. */
 		$this->fullpagenames_ = [];
 
-		global $wgContLang;
+		$contentLanguage = MediaWikiServices::getInstance()->getContentLanguage();
 
 		foreach ( $result as $row ) {
 			$this->fullpagenames_[] =
-				$wgContLang->getNsText( $row->page_namespace ) . ':'
+			$contentLanguage->getNsText( $row->page_namespace ) . ':'
 				. strtr( $row->page_title, '_', ' ' );
 		}
 
