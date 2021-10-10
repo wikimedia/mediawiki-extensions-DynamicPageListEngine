@@ -151,7 +151,7 @@ class DpleFeatureBase {
 			 */
 			$index = intval( $param );
 
-			if ( !MWNamespace::exists( $index ) ) {
+			if ( !MediaWikiServices::getInstance()->getNamespaceInfo()->exists( $index ) ) {
 				throw new Scribunto_LuaError( wfMessage(
 						'dple-error-invalid-ns-index', $index )->text() );
 			}
