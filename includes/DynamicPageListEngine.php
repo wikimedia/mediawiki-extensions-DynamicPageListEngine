@@ -64,10 +64,6 @@ class DynamicPageListEngine implements Countable {
 			'page',
 			[ 'page_namespace', 'page_title', 'page_is_redirect', 'page_len' ] );
 
-		if ( !$wgDisableCounters ) {
-			$this->query_->addVars( 'page_counter' );
-		}
-
 		/** Let all features modify @ref $query_. */
 		foreach ( $this->features_ as $feature ) {
 			$feature->modifyQuery( $this->query_ );

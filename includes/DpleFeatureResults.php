@@ -164,10 +164,6 @@ implements DpleFeatureInterface {
 				'length' => $row->page_len
 				];
 
-			if ( !$wgDisableCounters ) {
-				$title->dpleCustom['counter'] = $row->page_counter;
-			}
-
 			if ( isset( $row->cl_timestamp ) ) {
 				$title->dpleCustom['categoryadd'] = $row->cl_timestamp;
 

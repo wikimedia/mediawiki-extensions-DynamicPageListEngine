@@ -213,10 +213,6 @@ implements DpleFeatureInterface {
 				$sqlSort = "clx1.cl_type {$this->sqlOrder_}, clx1.cl_sortkey";
 				break;
 
-			case 'popularity':
-				$sqlSort = 'page_counter';
-				break;
-
 			case 'title':
 				$sqlSort =
 					$query->getDbr()->strreplace( 'page_title',
