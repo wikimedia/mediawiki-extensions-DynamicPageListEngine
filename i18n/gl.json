@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Banjo"
+			"Banjo",
+			"ArenaL5"
 		]
 	},
-	"dynamicpagelistengine-desc": "Fornece listas dinámicas de páxinas con características configurables e extensibles para os [https://www.mediawiki.org/wiki/Extension:Scribunto módulos] e outras extensións",
+	"dynamicpagelistengine-desc": "Fornece listas dinámicas de páxinas con características configurables e extensibles para os [[mw:Special:MyLanguage/Extension:Scribunto|módulos]] e outras extensións",
 	"dple-tracking-category": "Páxinas que usan DynamicPageListEngine",
 	"dple-error-invalid-ns-index": "Erro de DynamicPageListEngine: Non existe un espazo de nomes con índice $1.",
 	"dple-error-no-criteria": "Erro de DynamicPageListEngine: Non se especificaron criterios de selección.",
