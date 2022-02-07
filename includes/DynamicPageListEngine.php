@@ -38,7 +38,6 @@ class DynamicPageListEngine implements Countable {
 	 */
 	public function __construct( array $params ) {
 		global $wgDpleFeatures;
-		global $wgDisableCounters;
 
 		$this->params_ = $params;
 

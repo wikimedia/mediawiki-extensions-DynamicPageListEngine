@@ -119,8 +119,6 @@ implements DpleFeatureInterface {
 	 * @return array Array of Title objects.
 	 */
 	public function toTitles( ResultWrapper $result ) {
-		global $wgDisableCounters;
-
 		/** Use @ref $titles_ if already processed. */
 		if ( isset( $this->titles_ ) ) {
 			return $this->titles_;
