@@ -9,6 +9,8 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Utility functions.
  *
@@ -65,8 +67,14 @@ class DpleUtils {
 			return null;
 		}
 
-		$title = WikiPage::factory( $title )->getContent()
-			->getRedirectTarget();
+		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
+			// MW 1.36+
+			$title = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->getContent()
+				->getRedirectTarget();
+		} else {
+			$title = WikiPage::factory( $title )->getContent()
+				->getRedirectTarget();
+		}
 
 		if ( !isset( $title ) ) {
 			return null;
