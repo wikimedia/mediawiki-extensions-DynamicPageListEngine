@@ -4,7 +4,7 @@
 			"Vlad5250"
 		]
 	},
-	"dynamicpagelistengine-desc": "Pruža dinamičke spiskove stranica s podesivim i proširivim značajkama u [https://www.mediawiki.org/wiki/Extension:Scribunto modulima] i drugim dodacima",
+	"dynamicpagelistengine-desc": "Pruža dinamičke spiskove stranica s podesivim i proširivim značajkama u [[mw:Special:MyLanguage/Extension:Scribunto|modulima]] i drugim dodacima",
 	"dple-tracking-category": "Stranice koje koriste Pogon za dinamičke spiskove stranica",
 	"dple-error-invalid-ns-index": "Greška u Pogonu za dinamičke spiskove stranica: Nema imenskog prostora s indeksom $1.",
 	"dple-error-no-criteria": "Greška u Pogonu za dinamičke spiskove stranica: Nema ukazanih kriterija za izbor.",
