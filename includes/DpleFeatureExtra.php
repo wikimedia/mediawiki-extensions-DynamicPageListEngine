@@ -82,7 +82,7 @@ implements DpleFeatureInterface {
 		 *	and therefore only one unit is accounted for the whole
 		 *	array, if any.
 		 */
-		return ( count( $this->extras_ ) + (int)(bool)$this->notExtras_ )
+		return ( count( $this->extras_ ?? [] ) + (int)(bool)$this->notExtras_ )
 			* parent::getCost();
 	}
 

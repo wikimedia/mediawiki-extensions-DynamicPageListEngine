@@ -88,7 +88,7 @@ implements DpleFeatureInterface {
 	 * @param DpleQuery &$query
 	 */
 	public function modifyQuery( DpleQuery &$query ) {
-		switch ( count( $this->namespaces_ ) ) {
+		switch ( count( $this->namespaces_ ?? [] ) ) {
 			case 0:
 				break;
 
@@ -101,7 +101,7 @@ implements DpleFeatureInterface {
 					. implode( ',', $this->namespaces_ ) . ')' );
 		}
 
-		switch ( count( $this->notNamespaces_ ) ) {
+		switch ( count( $this->notNamespaces_ ?? [] ) ) {
 			case 0:
 				break;
 
