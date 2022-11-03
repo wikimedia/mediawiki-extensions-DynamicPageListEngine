@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
-	"dynamicpagelistengine-desc": "توفير قوائم صفحات ديناميكية بميزات قابلة للتوسعة وقابلة للتوسعة إلى [https://www.mediawiki.org/wiki/Extension:Scribunto الوحدات] وإضافات أخرى",
+	"dynamicpagelistengine-desc": "توفير قوائم صفحات ديناميكية بميزات قابلة للتكوين وقابلة للتوسيع لـ [[mw:Special:MyLanguage/Extension:Scribunto|الوحدات النمطية]] وإلى امتدادات أخرى",
 	"dple-tracking-category": "صفحات تستخدم محرك قائمة الصفحة الديناميكي",
 	"dple-error-invalid-ns-index": "خطأ محرك قائمة الصفحة الديناميكي: لا يوجد نطاق بالفهرس $1.",
 	"dple-error-no-criteria": "خطأ محرك قائمة الصفحة الديناميكي: لم يتم تحديد معايير تحديد.",
