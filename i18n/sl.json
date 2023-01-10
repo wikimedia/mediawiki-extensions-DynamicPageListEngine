@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"dynamicpagelistengine-desc": "Zagotavlja dinamične sezname strani z nastavljivimi in razširljivimi možnostmi za [[mw:Special:MyLanguage/Extension:Scribunto|module]] in druge razširitve",
+	"dple-tracking-category": "Strani, ki uporabljajo DynamicPageListEngine",
+	"dple-error-invalid-ns-index": "Napaka DynamicPageListEngine: Ni imenskega prostora z indeksom $1.",
+	"dple-error-no-criteria": "Napaka DynamicPageListEngine: Merila za izbiro niso navedena.",
+	"dple-error-too-expensive": "Napaka DynamicPageListEngine: Poskus poizvedbe bi stal toliko kot združitev $1 tabel podatkovne zbirke, dovoljeno pa je največ $2.",
+	"dple-error-too-many-expensive-functions": "Napaka DynamicPageListEngine: Na tej strani je uporabljenih preveč dragih funkcij."
+}
