@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"dple-tracking-category": "Puslapiai, naudojantys DynamicPageListEngine",
+	"dple-error-invalid-ns-index": "DynamicPageListEngine klaida: nėra vardų srities su $1 indeksu.",
+	"dple-error-no-criteria": "DynamicPageListEngine klaida: nenurodyta jokių atrankos kriterijų."
+}
