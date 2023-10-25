@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"dynamicpagelistengine-desc": "Bied dynamische paginalijsten aan met instelbare en uitbreidbare functies voor [[mw:Special:MyLanguage/Extension:Scribunto|modules]] en voor andere extensies",
+	"dple-tracking-category": "Pagina's die DynamicPageListEngine gebruiken",
+	"dple-error-invalid-ns-index": "DynamicPageListEngine-fout: geen naamruimte met index $1.",
+	"dple-error-no-criteria": "DynamicPageListEngine-fout: geen selectiecriteria opgegeven.",
+	"dple-error-too-expensive": "DynamicPageListEngine-fout: Er is gepoogd een query uit te voeren die het samenvoegen van $1 databasetabellen vereist, terwijl maximaal $2 zijn toegestaan.",
+	"dple-error-too-many-expensive-functions": "DynamicPageListEngine-fout: er worden te veel kostbare functies gebruikt op deze pagina."
+}
