@@ -44,7 +44,7 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 	/** Array of Title objects related to the pages to exclude. */
 	private $notLinkedTitles_;
 
-	private $notLinkedCount_ = 0;
+	private ?int $notLinkedCount_ = 0;
 
 	/**
 	 * @param array $params Array of parameters.
