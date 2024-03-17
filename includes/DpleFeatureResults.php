@@ -172,7 +172,7 @@ implements DpleFeatureInterface {
 						$title->dpleCustom['sortkey'] = $sortkey;
 
 						if ( strpos( $sortkey, '|' ) !== false ) {
-							list( , $title->dpleCustom['extra'] ) =
+							[ , $title->dpleCustom['extra'] ] =
 								explode( '|', $sortkey, 2 );
 						}
 					}
@@ -189,7 +189,7 @@ implements DpleFeatureInterface {
 						$title->dpleCustom['sortkeyx'] = $sortkeyx;
 
 						if ( strpos( $sortkeyx, '|' ) !== false ) {
-							list( , $title->dpleCustom['extrax'] ) =
+							[ , $title->dpleCustom['extrax'] ] =
 								explode( '|', $sortkeyx, 2 );
 						}
 					}
