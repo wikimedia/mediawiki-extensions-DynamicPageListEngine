@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hakimi97"
+		]
+	},
+	"dynamicpagelistengine-desc": "Menyedia senarai halaman dinamik dengan ciri yang boleh dikonfigurasikan dan boleh dikembangkan kepada [[mw:Special:MyLanguage/Extension:Scribunto|modul]] serta kepada sambungan lain",
+	"dple-tracking-category": "Halaman yang menggunakan DynamicPageListEngine",
+	"dple-error-invalid-ns-index": "Ralat DynamicPageListEngine: Tiada ruang nama dengan indeks $1.",
+	"dple-error-no-criteria": "Ralat DynamicPageListEngine: Tiada kriteria pemilihan ditentukan.",
+	"dple-error-too-expensive": "Ralat DynamicPageListEngine: Cuba untuk melakukan pertanyaan sebanyak $1 jadual pangkalan data bersama, manakala paling banyak $2 sahaja dibenarkan.",
+	"dple-error-too-many-expensive-functions": "Ralat DynamicPageListEngine: Terlalu banyak fungsi tinggi digunakan pada halaman ini."
+}
