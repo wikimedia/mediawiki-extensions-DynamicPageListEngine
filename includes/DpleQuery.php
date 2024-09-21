@@ -9,6 +9,8 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Database query specification and result.
  *
@@ -56,7 +58,7 @@ class DpleQuery implements Countable {
 		$joinConds = null
 	) {
 		/** Get a database object. */
-		$this->dbr_ = wfGetDB( DB_REPLICA );
+		$this->dbr_ = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		/** Initialize the class members with the arguments. */
 
