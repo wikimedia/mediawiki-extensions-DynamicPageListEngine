@@ -9,6 +9,8 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaError;
+
 /**
  * Check whether the whole specification is acceptable.
  *
@@ -89,7 +91,7 @@ implements DpleFeatureInterface {
 
 		/** Throw an exception if there is no WHERE clause. */
 		if ( !$query->getConds() ) {
-			throw new Scribunto_LuaError(
+			throw new LuaError(
 				wfMessage( 'dple-error-no-criteria' )->text() );
 		}
 
@@ -104,7 +106,7 @@ implements DpleFeatureInterface {
 		 *	$wgDpleMaxCost#.
 		 */
 		if ( $this->totalCost_ > $wgDpleMaxCost ) {
-			throw new Scribunto_LuaError(
+			throw new LuaError(
 				wfMessage( 'dple-error-too-expensive',
 					$this->totalCost_,
 					$wgDpleMaxCost )->text() );

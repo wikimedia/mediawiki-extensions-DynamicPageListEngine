@@ -9,6 +9,7 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaError;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -152,7 +153,7 @@ class DpleFeatureBase {
 			$index = intval( $param );
 
 			if ( !MediaWikiServices::getInstance()->getNamespaceInfo()->exists( $index ) ) {
-				throw new Scribunto_LuaError( wfMessage(
+				throw new LuaError( wfMessage(
 						'dple-error-invalid-ns-index', $index )->text() );
 			}
 

@@ -9,6 +9,10 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LibraryBase;
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaEngine;
+use MediaWiki\Extension\Scribunto\Engines\LuaCommon\LuaError;
+
 /**
  * [Scribunto](https://www.mediawiki.org/wiki/Extension:Scribunto) Lua
  * interface to DynamicPageListEngine.
@@ -17,7 +21,7 @@
  * @ingroup Extensions-DynamicPageListEngine
  */
 class Scribunto_LuaDynamicPageListEngineLibrary
-extends Scribunto_LuaLibraryBase {
+extends LibraryBase {
 
 	/**
 	 * [ScribuntoExternalLibraries]
@@ -25,7 +29,7 @@ extends Scribunto_LuaLibraryBase {
 	 *
 	 * Register this library.
 	 *
-	 * @param Scribunto_LuaEngine $engine Scribunto engine.
+	 * @param LuaEngine $engine Scribunto engine.
 	 *
 	 * @param array &$extraLibraries Libraries to register.
 	 *
@@ -40,7 +44,7 @@ extends Scribunto_LuaLibraryBase {
 	}
 
 	/**
-	 * @param Scribunto_LuaEngine $engine Scribunto engine.
+	 * @param LuaEngine $engine Scribunto engine.
 	 */
 	public function __construct( $engine ) {
 		parent::__construct( $engine );
@@ -81,7 +85,7 @@ extends Scribunto_LuaLibraryBase {
 		 * (https://www.mediawiki.org/wiki/Manual:$wgExpensiveParserFunctionLimit).
 		 */
 		if ( !$this->getParser()->incrementExpensiveFunctionCount() ) {
-			throw new Scribunto_LuaError( wfMessage(
+			throw new LuaError( wfMessage(
 					'dple-error-too-many-expensive-functions' )->text() );
 		}
 
