@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal"
+		]
+	},
+	"dple-error-invalid-ns-index": "DynamicPageListEngine(ਗਤੀਸ਼ੀਲ-ਸਫ਼ਾ-ਸੂਚੀ-ਇੰਜਣ) ਗਲਤੀ: ਤਤਕਰਾ $1 ਨਾਲ ਕੋਈ ਨਾਂ-ਥਾਂ ਨਹੀਂ ਹੈ।"
+}
