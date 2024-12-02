@@ -159,14 +159,12 @@ implements DpleFeatureInterface {
 
 		/** Add condition based on @ref $createdby_. */
 		if ( $this->createdby_ ) {
-			$table = "$tableName AS rev_c";
-
-			$query->addTables( $table );
+			$query->addTables( [ 'rev_c' => $tableName ] );
 
 			$cond = $this->buildIn( $this->createdby_ );
 
 			$query->addJoinCond(
-				$table, 'INNER JOIN',
+				'rev_c', 'INNER JOIN',
 				[ 'page_id = rev_c.rev_page',
 				  'rev_c.rev_parent_id = 0' ] );
 
@@ -175,14 +173,12 @@ implements DpleFeatureInterface {
 
 		/** Add condition based on @ref $notCreatedby_. */
 		if ( $this->notCreatedby_ ) {
-			$table = "$tableName AS rev_nc";
-
-			$query->addTables( $table );
+			$query->addTables( [ 'rev_nc' => $tableName ] );
 
 			$cond = 'NOT' . $this->buildIn( $this->notCreatedby_ );
 
 			$query->addJoinCond(
-				$table, 'INNER JOIN',
+				'rev_nc', 'INNER JOIN',
 				[ 'page_id = rev_nc.rev_page',
 				  'rev_nc.rev_parent_id = 0' ] );
 
@@ -191,14 +187,12 @@ implements DpleFeatureInterface {
 
 		/** Add condition based on @ref $lastmodifiedby_. */
 		if ( $this->lastmodifiedby_ ) {
-			$table = "$tableName AS rev_l";
-
-			$query->addTables( $table );
+			$query->addTables( [ 'rev_l' => $tableName ] );
 
 			$cond = $this->buildIn( $this->lastmodifiedby_ );
 
 			$query->addJoinCond(
-				$table, 'INNER JOIN',
+				'rev_l', 'INNER JOIN',
 				[ 'page_latest = rev_l.rev_id' ] );
 
 			$query->addConds( "rev_l.rev_user $cond" );
@@ -206,14 +200,12 @@ implements DpleFeatureInterface {
 
 		/** Add condition based on @ref $notLastmodifiedby_. */
 		if ( $this->notLastmodifiedby_ ) {
-			$table = "$tableName AS rev_nl";
-
-			$query->addTables( $table );
+			$query->addTables( [ 'rev_nl' => $tableName ] );
 
 			$cond = 'NOT' . $this->buildIn( $this->notLastmodifiedby_ );
 
 			$query->addJoinCond(
-				$table, 'INNER JOIN',
+				'rev_nl', 'INNER JOIN',
 				[ 'page_latest = rev_nl.rev_id' ] );
 
 			$query->addConds( "rev_nl.rev_user $cond" );
@@ -221,14 +213,12 @@ implements DpleFeatureInterface {
 
 		/** Add condition based on @ref $modifiedby_. */
 		if ( $this->modifiedby_ ) {
-			$table = "$tableName AS rev_m";
-
-			$query->addTables( $table );
+			$query->addTables( [ 'rev_m' => $tableName ] );
 
 			$cond = $this->buildIn( $this->modifiedby_ );
 
 			$query->addJoinCond(
-				$table, 'INNER JOIN',
+				'rev_m', 'INNER JOIN',
 				[ 'page_id = rev_m.rev_page' ] );
 
 			$query->addConds( "rev_m.rev_user $cond" );
@@ -238,14 +228,12 @@ implements DpleFeatureInterface {
 
 		/** Add condition based on @ref $notModifiedby_. */
 		if ( $this->notModifiedby_ ) {
-			$table = "$tableName AS rev_nm";
-
-			$query->addTables( $table );
+			$query->addTables( [ 'rev_nm' => $tableName ] );
 
 			$cond = $this->buildIn( $this->notModifiedby_ );
 
 			$query->addJoinCond(
-				$table, 'LEFT OUTER JOIN',
+				'rev_nm', 'LEFT OUTER JOIN',
 				[ 'page_id = rev_nm.rev_page',
 				  "rev_nm.rev_user $cond" ] );
 

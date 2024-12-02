@@ -78,7 +78,7 @@ class DynamicPageListEngine implements Countable {
 	 * @return int Number of result rows, or 0 if the query has not
 	 * yet been executed.
 	 */
-	public function count() {
+	public function count(): int {
 		return count( $this->query_ );
 	}
 

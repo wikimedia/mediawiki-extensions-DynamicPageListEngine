@@ -148,16 +148,15 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 	 */
 	public function modifyQuery( DpleQuery &$query ) {
 		$dbr = $query->getDbr();
-		$tableName = $dbr->tableName( $this->tableName_ );
 		$n = 1;
 
 		/** Add conditions based on @ref $linkedTitles_. */
 		for ( $i = 0; $i < $this->linkedCount_; $i++ ) {
-			$table = "$tableName AS {$this->tableAlias_}$n";
+			$tableAlias = $this->tableAlias_ . $n;
 
-			$query->addTables( $table );
+			$query->addTables( [ $tableAlias => $this->tableName_ ] );
 
-			$query->addJoinCond( $table, 'INNER JOIN',
+			$query->addJoinCond( $tableAlias, 'INNER JOIN',
 				$this->transformJoinConds( $dbr, $n,
 					$this->linkedTitles_[$i] ) );
 
@@ -166,16 +165,15 @@ class DpleFeatureLinksBase extends DpleFeatureBase {
 
 		/** Add conditions based on @ref $notLinkedTitles_. */
 		for ( $i = 0; $i < $this->notLinkedCount_; $i++ ) {
-			$table = "$tableName AS {$this->tableAlias_}$n";
+			$tableAlias = $this->tableAlias_ . $n;
 
-			$query->addTables( $table );
+			$query->addTables( [ $tableAlias => $this->tableName_ ] );
 
-			$query->addJoinCond( $table, 'LEFT OUTER JOIN',
+			$query->addJoinCond( $tableAlias, 'LEFT OUTER JOIN',
 				$this->transformJoinConds( $dbr, $n,
 					$this->notLinkedTitles_[$i] ) );
 
-			$query->addConds(
-				[ "{$this->tableAlias_}{$n}.{$this->tableColumn_}" => null ] );
+			$query->addConds( [ "$tableAlias.{$this->tableColumn_}" => null ] );
 			$n++;
 		}
 	}

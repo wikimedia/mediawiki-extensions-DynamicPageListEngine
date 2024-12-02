@@ -73,7 +73,7 @@ class DpleQuery implements Countable {
 	 * @return int Number of result rows, or 0 if the query has not
 	 * yet been executed.
 	 */
-	public function count() {
+	public function count(): int {
 		if ( isset( $this->result_ ) ) {
 			return $this->result_->numRows();
 		} else {
