@@ -9,6 +9,8 @@
  * @author [RV1971](https://www.mediawiki.org/wiki/User:RV1971)
  */
 
+use MediaWiki\Title\Title;
+
 /**
  * Base class for selection by links.
  *
