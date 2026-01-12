@@ -1,8 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Stefan2255",
 			"WikiPhoenix"
 		]
 	},
-	"dple-tracking-category": "Sidor som använder DynamicPageListEngine"
+	"dynamicpagelistengine-desc": "Tillhandahåll dynamiska sidlistor med konfigurerbara och utökningsbara funktioner till [[mw:Special:MyLanguage/Extension:Scribunto|moduler]] och till andra tillägg",
+	"dple-tracking-category": "Sidor som använder DynamicPageListEngine",
+	"dple-error-invalid-ns-index": "DynamicPageListEngine-fel: Inget namnrymd med index $1.",
+	"dple-error-no-criteria": "DynamicPageListEngine-fel: Inga urvalskriterier angivna.",
+	"dple-error-too-expensive": "DynamicPageListEngine-fel: Försök att utföra en fråga så dyr som $1 i kopplade databastabeller, medan högst $2 är tillåtna.",
+	"dple-error-too-many-expensive-functions": "DynamicPageListEngine-fel: För många dyra funktioner används på den här sidan."
 }
