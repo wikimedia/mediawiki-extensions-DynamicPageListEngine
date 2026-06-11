@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
-	"dynamicpagelistengine-desc": "Bied dynamische paginalijsten aan met instelbare en uitbreidbare functies voor [[mw:Special:MyLanguage/Extension:Scribunto|modules]] en voor andere extensies",
+	"dynamicpagelistengine-desc": "Bied dynamische paginalijsten aan met instelbare en uitbreidbare functies voor [[mw:Special:MyLanguage/Extension:Scribunto|modules]] en voor andere uitbreidingen",
 	"dple-tracking-category": "Pagina's die DynamicPageListEngine gebruiken",
 	"dple-error-invalid-ns-index": "DynamicPageListEngine-fout: geen naamruimte met index $1.",
 	"dple-error-no-criteria": "DynamicPageListEngine-fout: geen selectiecriteria opgegeven.",
