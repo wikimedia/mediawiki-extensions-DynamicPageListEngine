@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"dynamicpagelistengine-desc": "Sii liisaska bogagga firfircoon ee leh astaamo la habayn karo lana ballaarin karo [[mw:Special:MyLanguage/Extension:Scribunto|modules]] iyo kordhinnada kale",
+	"dple-tracking-category": "Bogagga isticmaalaya DynamicPageListEngine",
+	"dple-error-invalid-ns-index": "Khaladka DynamicPageListEngine: Ma jiro meel magaca leh tusmada $1.",
+	"dple-error-no-criteria": "Khaladka DynamicPageListEngine: Shuruudo xulasho lama cayimin.",
+	"dple-error-too-expensive": "Khaladka DynamicPageListEngine: Waxaa la isku dayay in la sameeyo weydiin culus oo ku saabsan $1 jadwal oo xog-ururin ah oo la isku daray, halka ugu badnaan $2 la oggol yahay.",
+	"dple-error-too-many-expensive-functions": "Khaladka DynamicPageListEngine: Shaqooyin aad u badan oo culus ayaa lagu isticmaalay boggan."
+}
