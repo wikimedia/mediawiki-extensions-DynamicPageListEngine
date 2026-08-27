@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"dynamicpagelistengine-desc": "Poskytuje dynamické zoznamy stránok s konfigurovateľnými a rozšíriteľnými funkciami [[mw:Special:MyLanguage/Extension:Scribunto|modulom]] a iným rozšíreniam",
+	"dple-tracking-category": "Stránky používajúce DynamicPageListEngine",
+	"dple-error-invalid-ns-index": "Chyba DynamicPageListEngine: Neexistuje menný priestor s indexom $1.",
+	"dple-error-no-criteria": "Chyba DynamicPageListEngine: Neboli zadané žiadne výberové kritériá.",
+	"dple-error-too-expensive": "Chyba DynamicPageListEngine: Pokus o vykonanie dopytu náročného ako $1 spojených databázových tabuliek, pričom povolených je najviac $2.",
+	"dple-error-too-many-expensive-functions": "Chyba DynamicPageListEngine: Na tejto stránke je použitých príliš veľa náročných funkcií."
+}
