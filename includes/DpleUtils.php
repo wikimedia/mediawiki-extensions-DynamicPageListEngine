@@ -68,14 +68,8 @@ class DpleUtils {
 			return null;
 		}
 
-		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
-			// MW 1.36+
-			$title = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->getContent()
-				->getRedirectTarget();
-		} else {
-			$title = WikiPage::factory( $title )->getContent()
-				->getRedirectTarget();
-		}
+		$title = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->getContent()
+			->getRedirectTarget();
 
 		if ( !isset( $title ) ) {
 			return null;
